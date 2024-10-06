@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+.link-container {
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
+    width: 100%;               
+}
+
+.link-container h1 {
+    color: #1DA1F2;             
+    text-align: center;          
+    padding-top: 10px;                
+}
+
+
+.link-container a {
+    text-decoration: none;        
+    color: #1DA1F2;            
+    transition: color 0.3s;     
+}
+
+.link-container a:hover {
+    color: #ffffff;              
+    text-decoration: underline;  
+}
+
+.subtitle-container {
+    display: flex;              
+    justify-content: center;   
+    align-items: center;    
+    padding-top: 10px;     
+    width: 100%;    
+}
+
+.subtitle-container h2 {
+    font-size: 24px; 
+}
+
+.video-placeholder {
+    display: flex;            
+    justify-content: center;      
+    align-items: center;         
+    margin-bottom: 20px; 
+    width: 100%;                 
+}
+
+.video-placeholder video {
+    max-width: 40%;              
+    height: auto;                 
+    /*border: 2px solid #1DA1F2; */
+    border-radius: 10px;         
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0f10; 
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.box {
+    background-color: #0e0f10; 
+    border: 2px solid #1DA1F2; 
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px; 
+    flex: 1 1 calc(25% - 20px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+p {
+    color: #FFFFFF; 
+    /* fix this padding to make it stand out more*/
+}
+
+h2 {
+    background-color: #1DA1F2; 
+    color: white; 
+    padding: 10px;
+    margin: -20px -20px 20px; 
+    font-size: 1.5em; 
+    text-align: center; 
+}
+
+ul {
+    padding-left: 20px; 
+    color: #FFFFFF;
+}
+
+/*  */
+
+
+
+/* Responsive Styles */
+@media (max-width: 912px) {
+    .box {
+        flex: 1 1 100%;
+    }
+}
