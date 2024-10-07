@@ -26,74 +26,129 @@
         <div class="box">
             <h2>Trigger</h2>
             <ul>
-                <li>hover ON</li>
+                <li>hover ON
+                    <ul>
+                        <li>1 second delay</li>
+                    </ul>
+                </li>
                 <li>hover OFF</li>
                 <li>click ON</li>
                 <li>click OFF</li>
             </ul>
         </div>
+
         <div class="box">
             <h2>Rules</h2>
                 <p>Like Button - Default</p>
                     <ul>
-                        <li>hover ON - Cursor changes to pointer</li>
-                        <li>hover OFF - Cursor changes back to default</li>
+                        <li>hover ON</li>
+                            <ul>
+                                <li>Cursor changes to pointer</li>
+                                <li>Icon outline changes from grey to red and radiates around icon</li>
+                                <li>Icon and number shifts slightly upward</li>
+                                <li>Text prompt "Like" appears after 1 second</li>
+                            </ul>
+                        <li>hover OFF</li>
+                            <ul>
+                                <li>Cursor changes back to default</li>
+                                <li>Icon outline changes from red back to grey</li>
+                                <li>Icon and number shift back to orignal spot</li>
+                                <li>Text prompt disappears</li>
+                            </ul>
                         <li>click ON</li>
                         <ul>
-                            <li>Icon changes to filled heart</li>
+                            <li>Icon changes to filled heart and number </li>
                             <li>Confetti animation triggers</li>
-                            <li>Database record flag is set to TRUE</li>
                         </ul>
                         <li>click OFF</li>
                         <ul>
-                            <li>Icon changes back to outline heart</li>
-                            <li>Database record flag is set to FLASE</li>
+                            <li>Icon changes back to outline grey heart</li>
                         </ul>
                     </ul>
                 <p>Like Button - Active</p>
                     <ul>
-                        <li>hover ON - Cursor changes to pointer</li>
-                        <li>hover OFF - Cursor changes back to default</li>
+                        <li>hover ON</li>
+                            <ul>
+                                <li>Cursor changes to pointer</li>
+                                <li>Red 25% opacity ring around heart icon</li>
+                                <li>Text prompt "Unlike" appears after 1 second</li>
+                            </ul>
+                        <li>hover OFF</li>
+                            <ul>
+                                <li>Cursor changes back to default</li>
+                                <li>Text prompt disappears</li>
+                            </ul>
                         <li>click ON</li>
-                        <ul>
-                            <li>Icon remains filled heart</li>
-                            <li>No additional action can be taken</li>
-                        </ul>
-                        <li>click OFF</li>
-                        <ul>
-                            <li>Icon changes back to outline heart</li>
-                            <li>Confetti animation triggers</li>
-                            <li>Database record flag is set to FALSE</li>
-                        </ul>
+                            <ul>
+                                <li>Icon changes back to outline grey heart </li>
+                            </ul>
                     </ul>
-            </ul>
         </div>
+
         <div class="box">
             <h2>Feedback</h2>
                 <p>Like Button - Default</p>
                     <ul>
-                        <li>hover ON - Cursor changes to pointer</li>
-                        <li>hover OFF - Cursor returns to default</li>
+                        <li>hover ON</li>
+                            <ul>
+                                <li>Cursor changes to pointer</li>
+                                <li>Icon outline changes from grey to red and radiates around icon</li>
+                                <li>Icon and number shifts slightly upward</li>
+                                <li>Text prompt "Like" appears after 1 second</li>
+                            </ul>
+                        <li>hover OFF</li>
+                            <ul>
+                                <li>Cursor changes back to default</li>
+                                <li>Icon outline changes from red back to grey</li>
+                                <li>Icon and number shift back to orignal spot</li>
+                                <li>Text prompt disappears</li>
+                            </ul>
                         <li>click ON</li>
                         <ul>
-                            <li>Confetti animation plays</li>
-                            <li>Optional sound effect (e.g. "pop") may play to indicate the action ??</li>
+                            <li>Icon changes to filled heart and number </li>
+                            <li>Confetti animation triggers</li>
                         </ul>
-                        <li>click OFF - No animation; icon visually updates to outline heart</li>
+                        <li>click OFF</li>
+                            <ul>
+                                <li>Icon changes back to outline grey heart</li>
+                            </ul>
                     </ul>
                 <p>Like Button - Active</p>
                     <ul>
-                        <li>hover ON - Cursor changes to pointer</li>
-                        <li>hover OFF - Cursor returns to default</li>
-                        <li>click ON - Filled heart remains; user receives visual confirmation via notifications??</li>
-                        <li>click OFF - Confetti animation plays again, with optional sound ??</li>
+                        <li>hover ON</li>
+                            <ul>
+                                <li>Cursor changes to pointer</li>
+                                <li>Red 25% opacity ring around heart icon</li>
+                                <li>Text prompt "Unlike" appears after 1 second</li>
+                            </ul>
+                        <li>hover OFF</li>
+                            <ul>
+                                <li>Cursor changes back to default</li>
+                                <li>Text prompt disappears</li>
+                            </ul>
+                        <li>click ON</li>
+                            <ul>
+                                <li>Icon changes back to outline grey heart </li>
+                            </ul>
                     </ul>
         </div>
+
         <div class="box">
             <h2>Loops & Modes</h2>
-            <ul>
-                <li>No Loops</li>
-            </ul>
+                <ul>
+                    <li>Loops</li>
+                        <ul>
+                            <li>None</li>
+                        </ul>
+                    <li>Modes</li>
+                        <ul>
+                            <li>hover ON</li>
+                                <ul>
+                                    <li>Text prompt "Like" appears after 1 second</li>
+                                    <li>Text prompt "Unlike" appears after 1 second when hovering on active icon</li>
+                                </ul>
+                        </ul>
+                </ul>
         </div>
     </div>
 </body>

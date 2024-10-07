@@ -46,7 +46,7 @@ body {
 
 .subtitle-container h1 {
     font-size: 24px; 
-    color: #1DA1F2;
+    color: #656566;
 }
 
 .video-placeholder {
@@ -74,7 +74,7 @@ body {
 
 .box {
     background-color: #262729; 
-    border: 2px solid #1DA1F2; 
+    border: 2px solid #148ad3; 
     border-radius: 5px;
     padding: 20px;
     margin: 10px; 
@@ -90,7 +90,7 @@ p {
 }
 
 h2 {
-    background-color: #1DA1F2; 
+    background-color: #148ad3; 
     color: white; 
     padding: 10px;
     margin: -20px -20px 20px; 
@@ -99,13 +99,16 @@ h2 {
 }
 
 ul {
-    padding-left: 35px; 
+    padding-left: 20px; 
     color: #FFFFFF;
 }
 
 li {
-    padding: 0px 0px 10px
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
+
 
 
 /* Responsive Styles */
