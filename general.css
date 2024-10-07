@@ -86,7 +86,6 @@ p {
     color: #FFFFFF; 
     font-weight: bold;
     padding-top: 10px;
-    /* fix this padding to make it stand out more*/
 }
 
 h2 {
@@ -107,9 +106,6 @@ li {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-
-
 
 /* Responsive Styles */
 @media (max-width: 912px) {
