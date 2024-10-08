@@ -21,12 +21,6 @@
     </div>
 
     <div class="container">
-        <div class="video-placeholder">
-            <video controls autoplay loop muted>
-                <source src="assets/x_video.mp4" type="video/mp4"> 
-            </video>
-        </div>
-
         <div class="box">
             <h2>Trigger</h2>
             <p>Like Button - Default</p>
@@ -49,7 +43,7 @@
                 </li>
                 <li>hover OFF</li>
                 <li>mouse DOWN</li>
-                <li>mouse UP (click ON)</li>
+                <li>mouse UP (click OFF)</li>
             </ul>
         </div>
 
@@ -80,6 +74,7 @@
                     <ul>
                         <li>Icon changes to filled heart and number updates</li>
                         <li>Confetti animation triggers</li>
+                        <li>Database updates</li>
                     </ul>
                 </li>
             </ul>
@@ -103,9 +98,10 @@
                         <li>Red ring opacity increases to 75%</li>
                     </ul>
                 </li>
-                <li>mouse UP (click ON)
+                <li>mouse UP (click OFF)
                     <ul>
-                        <li>Icon changes back to grey heart outline</li>
+                        <li>Icon changes back to grey heart outline and number updates</li>
+                        <li>Database updates</li>
                     </ul>
                 </li>
             </ul>
@@ -161,9 +157,9 @@
                         <li>Red ring opacity increases to 75%</li>
                     </ul>
                 </li>
-                <li>mouse UP (click ON)
+                <li>mouse UP (click OFF)
                     <ul>
-                        <li>Icon changes back to grey heart outline</li>
+                        <li>Icon changes back to grey heart outline and number updates</li>
                     </ul>
                 </li>
             </ul>
@@ -179,22 +175,44 @@
                 </li>
                 <li>Modes
                     <ul>
-                        <li>hover ON
+                        <li>Like Button - Default
                             <ul>
-                                <li>Text prompt "Like" appears after 1 second when hovering on default stage</li>
-                                <li>Text prompt "Unlike" appears after 1 second when hovering on active stage</li>
+                                <li>hover ON
+                                    <ul>
+                                        <li>Text prompt "Like" appears</li>
+                                    </ul>
+                                </li>
+                                <li>mouse UP (click ON)
+                                    <ul>
+                                        <li>Default stage becomes filled, red icon</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li>mouse UP (click ON)
+                        <li>Like Button - Active
                             <ul>
-                                <li>Default stage becomes filled, red icon</li>
-                                <li>Active stage becomes outlined, grey icon</li>
+                                <li>hover ON
+                                    <ul>
+                                        <li>Text prompt "Unlike" appears</li>
+                                    </ul>
+                                </li>
+                                <li>mouse UP (click OFF)
+                                    <ul>
+                                        <li>Active stage becomes outline, grey icon</li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
                     </ul>
                 </li>
             </ul>
         </div>
+
+        <div class="video-placeholder">
+            <video controls autoplay loop muted>
+                <source src="assets/x_video.mp4" type="video/mp4"> 
+            </video>
+        </div>
+
     </div>
 </body>
 </html>
