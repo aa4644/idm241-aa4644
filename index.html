@@ -3,216 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Description - Like Button Interaction</title>
-    <link rel="stylesheet" href="idm241/general.css">
+    <title>Homepage</title>
+    <style>
+        a:link, a:visited {
+            background-color: #cfe3ff;
+            color: rgb(0, 0, 0);
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 40px;
+        }
+        
+        a:hover, a:active {
+            background-color: rgb(152, 209, 251);
+        }
+    </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="idm241/assets/x_logo.jpg" alt="X logo">
-    </div>
+    <a href="idm241/alpha/build.html" target="_blank">Alpha Build - Zillow</a>
+    <a href="idm241/alpha.html" target="_blank">Alpha Description - X</a>
 
-    <div class="link-container">
-        <a href="https://x.com/twaniimals/status/1838746542565360083" target="_blank"><h1>IDM 241: Alpha Description - x.com</h1></a>
-    </div>
-
-    <div class="subtitle-container">
-        <h1>Interaction: Like Button</h1>
-    </div>
-
-    <div class="container">
-        <div class="box">
-            <h2>Trigger</h2>
-            <p>Like Button - Default</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>1 second delay</li>
-                    </ul>
-                </li>
-                <li>hover OFF</li>
-                <li>mouse DOWN</li>
-                <li>mouse UP (click ON)</li>
-            </ul>
-            <p>Like Button - Active</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>1 second delay</li>
-                    </ul>
-                </li>
-                <li>hover OFF</li>
-                <li>mouse DOWN</li>
-                <li>mouse UP (click OFF)</li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Rules</h2>
-            <p>Like Button - Default</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor changes to pointer</li>
-                        <li>Icon outline changes from grey to red and red ring with 25% opacity radiates around icon</li>
-                        <li>Text prompt "Like" appears after 1 second</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor changes back to default</li>
-                        <li>Icon outline changes from red back to grey</li>
-                        <li>Text prompt "Like" disappears</li>
-                    </ul>
-                </li>
-                <li>mouse DOWN
-                    <ul>
-                        <li>Red ring opacity increases to 75%</li>
-                    </ul>
-                </li>
-                <li>mouse UP (click ON)
-                    <ul>
-                        <li>Icon changes to filled heart and number updates</li>
-                        <li>Confetti animation triggers</li>
-                        <li>Database updates</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Like Button - Active</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor changes to pointer</li>
-                        <li>Red ring with 25% opacity around heart icon appears</li>
-                        <li>Text prompt "Unlike" appears after 1 second</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor changes back to default</li>
-                        <li>Text prompt "Unlike" disappears</li>
-                    </ul>
-                </li>
-                <li>mouse DOWN
-                    <ul>
-                        <li>Red ring opacity increases to 75%</li>
-                    </ul>
-                </li>
-                <li>mouse UP (click OFF)
-                    <ul>
-                        <li>Icon changes back to grey heart outline and number updates</li>
-                        <li>Database updates</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Feedback</h2>
-            <p>Like Button - Default</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor changes to pointer</li>
-                        <li>Icon outline changes from grey to red and red ring with 25% opacity radiates around icon</li>
-                        <li>Text prompt "Like" appears after 1 second</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor changes back to default</li>
-                        <li>Icon outline changes from red back to grey</li>
-                        <li>Text prompt "Like" disappears</li>
-                    </ul>
-                </li>
-                <li>mouse DOWN
-                    <ul>
-                        <li>Red ring opacity increases to 75%</li>
-                    </ul>
-                </li>
-                <li>mouse UP (click ON)
-                    <ul>
-                        <li>Icon changes to filled heart and number updates</li>
-                        <li>Confetti animation triggers</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Like Button - Active</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor changes to pointer</li>
-                        <li>Red ring with 25% opacity around heart icon appears</li>
-                        <li>Text prompt "Unlike" appears after 1 second</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor changes back to default</li>
-                        <li>Text prompt "Unlike" disappears</li>
-                    </ul>
-                </li>
-                <li>mouse DOWN
-                    <ul>
-                        <li>Red ring opacity increases to 75%</li>
-                    </ul>
-                </li>
-                <li>mouse UP (click OFF)
-                    <ul>
-                        <li>Icon changes back to grey heart outline and number updates</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Loops & Modes</h2>
-            <ul>
-                <li>Loops
-                    <ul>
-                        <li>None</li>
-                    </ul>
-                </li>
-                <li>Modes
-                    <ul>
-                        <li>Like Button - Default
-                            <ul>
-                                <li>hover ON
-                                    <ul>
-                                        <li>Text prompt "Like" appears</li>
-                                    </ul>
-                                </li>
-                                <li>mouse UP (click ON)
-                                    <ul>
-                                        <li>Default stage becomes filled, red icon</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Like Button - Active
-                            <ul>
-                                <li>hover ON
-                                    <ul>
-                                        <li>Text prompt "Unlike" appears</li>
-                                    </ul>
-                                </li>
-                                <li>mouse UP (click OFF)
-                                    <ul>
-                                        <li>Active stage becomes outline, grey icon</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="video-placeholder">
-            <video controls autoplay loop muted>
-                <source src="idm241/assets/x_video.mp4" type="video/mp4"> 
-            </video>
-        </div>
-
-    </div>
 </body>
 </html>

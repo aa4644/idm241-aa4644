@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+}
+
+.property-image {
+    width: 100%;
+    height: auto;
+}
+
+.heart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.heart-button.liked {
+    color: red;
+    transform: scale(1.2);
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.badge {
+    background-color: #e67300;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.price {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.details {
+    color: #555;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.address {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.mls-info {
+    font-size: 10px;
+    color: #999;
+}

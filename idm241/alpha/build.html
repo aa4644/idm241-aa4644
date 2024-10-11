@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Build - Favorite Button Interaction</title>
+    <link rel="stylesheet" href="general.css">
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="assets/zillow_logo.svg" alt="Zillow logo">
+    </div>
+
+    <div class="link-container">
+        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Alpha Build - Zillow.com</h1></a>
+    </div>
+
+    <div class="subtitle-container">
+        <h1>Interaction: Favorite Button</h1>
+    </div>
+
+    <div  class="subtitle-container">
+        <div class="like-button" id="likeButton">
+            <img src="assets/default_state.svg" alt="Default" id="heartIcon">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <h2>Trigger</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click ON)</li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click OFF)</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Rules</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Filled, black opacity in icon changes to 50%</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Filled, black opacity in icon changes back to 25%</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>filled, black opacity in icon changes to 50%</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>Icon changes to filled, white heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Blue, rounded square appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Blue, rounded square disappears from icon</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click OFF)
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                        <li>Filled, black opacity in icon changes to 50%</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Filled, black opacity in icon changes to 50%</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Filled, black opacity in icon changes back to 25%</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>filled, black opacity in icon changes to 50%</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>Icon changes to filled, white heart</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Blue, rounded square appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Blue, rounded square disappears from icon</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click OFF)
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                        <li>Filled, black opacity in icon changes to 50%</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Loops & Modes</h2>
+            <ul>
+                <li>Loops
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>Modes
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
