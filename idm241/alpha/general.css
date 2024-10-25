@@ -12,6 +12,21 @@ body {
     height: 100vh;
 }
 
+.video-placeholder {
+    display: flex;            
+    justify-content: center;      
+    align-items: center;         
+    margin-bottom: 20px; 
+    width: 100%;                 
+}
+
+.video-placeholder video {
+    max-width: 100%;             
+    height: auto;                 
+    /*border: 2px solid #1DA1F2; */
+    border-radius: 10px;         
+}
+
 .logo-container {
     display: flex;               
     justify-content: center;     

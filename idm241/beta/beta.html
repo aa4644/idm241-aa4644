@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Build - Favorite Button Interaction</title>
+    <link rel="stylesheet" href="../alpha/general.css">
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="../alpha/assets/zillow_logo.svg" alt="Zillow logo">
+    </div>
+
+    <div class="link-container">
+        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Beta Description - Zillow.com</h1></a>
+    </div>
+
+    <div class="subtitle-container">
+        <h1>Interaction: Favorite Button, Property Modal Card, "Request Tour" Button</h1>
+    </div>
+
+    
+    <div class="container">
+        <div class="box">
+            <h2>Triggers</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click ON)</li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click OFF)</li>
+            </ul>
+            
+            <p>Property Modal Card - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click ON)</li>
+            </ul>
+
+            <p>"Request Tour" - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP (click ON)</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Rules</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>Icon changes to filled, heart heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Filled icon changes to darker red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Filled icon changes back to original red</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click OFF)
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Property Modal Card - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button slides in from the right side of the card</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow around card disappears</li>
+                        <li>"Request Tour" button slides out to the right, hiding from view</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Black shadow at 50% opacity appears around card</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>User navigates to the property details page</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>Icon changes to filled, heart heart</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Filled icon changes to darker red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Filled icon changes back to original red</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click OFF)
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Property Modal Card - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button slides in from the right side of the card</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow around card disappears</li>
+                        <li>"Request Tour" button slides out to the right, hiding from view</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Black shadow at 50% opacity appears around card</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>User navigates to the property details page</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes back to default</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP (click ON)
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Loops & Modes</h2>
+            <ul>
+                <li>Loops
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>Modes
+                    <ul>
+                        <li>Property Modal Card - Default
+                            <ul>
+                                <li>User navigates to the property details page</li>
+                            </ul>
+                        </li>
+                        <li>"Request Tour" Button - Default
+                            <ul>
+                                <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="video-placeholder">
+        <video controls autoplay loop muted>
+            <source src="beta_video.mp4" type="video/mp4"> 
+        </video>
+    </div>
+    <script src="../alpha/script.js"></script>
+</body>
+</html>
