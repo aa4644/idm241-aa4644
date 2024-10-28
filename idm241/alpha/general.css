@@ -67,7 +67,9 @@ body {
     color: #000000;             
     text-align: center;  
     margin-top: 0;
-    padding-top: 0;                    
+    padding-top: 0;    
+    padding-left: 15px;
+    padding-right: 15px;                
 }
 
 
@@ -91,6 +93,8 @@ body {
 
 .subtitle-container h1 {
     font-size: 24px; 
+    padding-left: 15px;
+    padding-right: 15px;
     color: #c0c5ca;             
 }
 
