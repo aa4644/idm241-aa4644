@@ -196,3 +196,63 @@ li {
         flex: 1 1 100%; 
     }
 }
+
+
+/* beta description CSS */
+.image-group {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.image-group-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-top: 1rem;;
+    margin-bottom: 15px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 calc(25% - 20px); /* 4 columns on desktop */
+    box-sizing: border-box;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.image-item-caption {
+    margin-top: 0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Tablet layout - 2 columns */
+@media (max-width: 912px) {
+    .image-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+/* Mobile layout - 1 column */
+@media (max-width: 600px) {
+    .image-item {
+        flex: 1 1 100%;
+    }
+}
