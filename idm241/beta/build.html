@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Description</title>
+    <link rel="stylesheet" href="../beta/beta-build.css">
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="../alpha/assets/zillow_logo.svg" alt="Zillow logo">
+    </div>
+
+    <div class="link-container">
+        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Beta Build - Zillow.com</h1></a>
+    </div>
+
+    <div class="subtitle-container">
+        <h1>Interaction: Favorite Button, Property Modal Card, "Request Tour" Button, "X" Close Modal Button</h1>
+    </div>
+
+    <div class="property-card-container">
+        <div class="property-card" onclick="window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');">
+            <div class="image-container">
+                <img src="property-image.png" alt="Property Image">
+                <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
+                    <img id="heart-icon" src="images/default.svg" alt="Like Button">
+                </button>
+            </div>
+            <div class="property-details">
+                <div class="price-row">
+                    <h2>$1,500,000</h2>
+                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                </div>
+                <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
+                <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
+                <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for "Request Tour" (initially hidden) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Request a Tour</h2>
+            <!-- Add any additional content you need in the modal here -->
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="container">
+        <div class="box">
+            <h2>Triggers</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse UP</li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse UP</li>
+            </ul>
+            
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse UP</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Rules</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes to filled, red heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button appears</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button disappears</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes back to black</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Pop-up modal closes</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes to filled, red heart</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button appears</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button disappears</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes back to black</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Pop-up modal closes</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Loops & Modes</h2>
+            <ul>
+                <li>Loops
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>Modes: mouse UP 
+                    <ul>
+                        <li>"Request Tour" Button - Default
+                            <ul>
+                                <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="../beta/beta-script.js"></script>
+</body>
+</html>
