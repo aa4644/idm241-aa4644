@@ -161,7 +161,7 @@ li {
 }
 
 
-/* beta description CSS */
+/*** beta description CSS ***/
 .image-group {
     width: 100%;
     margin-bottom: 40px;
@@ -221,7 +221,9 @@ li {
 }
 
 
-/* Center the property card */
+
+/*** Beta Build ***/
+
 .property-card-container {
     display: flex;
     justify-content: center;
@@ -229,7 +231,6 @@ li {
     margin-bottom: 10px;
 }
 
-/* Property card styling */
 .property-card {
     width: 300px;
     background-color: #fff;
@@ -241,19 +242,16 @@ li {
     cursor: pointer;
 }
 
-/* Hover effect for the property card */
 .property-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: .7s;
 }
 
-/* Image container styling */
 .image-container {
     position: relative;
 }
 
-/* Favorite button styling */
 .favorite-btn {
     position: absolute;
     top: 10px;
@@ -264,13 +262,12 @@ li {
     padding: 5px;
 }
 
-/* Heart icon size */
 .favorite-btn img {
     width: 40px;
     height: 40px;
+    transition: opacity 0.3s ease;
 }
 
-/* Property details styling */
 .property-details {
     padding-top: 0;
     padding-bottom: 16px;
@@ -278,7 +275,7 @@ li {
     padding-right: 16px;
 }
 
-/* Price row styling */
+
 .price-row {
     display: flex;
     justify-content: space-between;
@@ -293,8 +290,6 @@ li {
 }
 
 
-
-/* Request Tour button styling */
 .request-tour-btn {
     display: none;
     border: 2px solid #0041D9;
@@ -312,7 +307,6 @@ li {
     display: inline-block;
 }
 
-/* Request Tour button hover and active effects */
 .request-tour-btn:hover {
     background-color: rgba(0, 0, 255, 0.1);
 
@@ -321,15 +315,13 @@ li {
     background-color: rgba(0, 0, 255, 0.2);
 }
 
-/* Property info styling */
 .property-info, .address, .mls-id {
     font-size: 0.9em;
     margin: 5px 0;
 }
 
-/* Modal styling */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -339,7 +331,7 @@ li {
     justify-content: center;
     align-items: center;
     opacity: 0; /* Start hidden */
-    transition: opacity 0.5s ease; /* Transition for opacity */
+    transition: opacity 0.5s ease; 
 }
 
 .modal.show {
@@ -356,7 +348,6 @@ li {
     position: relative;
 }
 
-/* Close button styling */
 .close {
     position: absolute;
     top: 10px;

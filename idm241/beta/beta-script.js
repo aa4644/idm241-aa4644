@@ -1,6 +1,5 @@
-let isLiked = false; // Track whether the button is in the "liked" state
+let isLiked = false; 
 
-// Function to handle click on the like button
 function toggleLike(event) {
     event.stopPropagation(); // Prevents the card click event from triggering
     isLiked = !isLiked;
@@ -12,43 +11,53 @@ function handleHover(isHovering) {
     const heartIcon = document.getElementById("heart-icon");
 
     if (isLiked) {
-        // If the heart is "liked," show "active-hover" on hover, else show "active-filled"
-        heartIcon.src = isHovering ? "images/active-hover.svg" : "images/active-filled.svg";
+        // transition between active-filled and active-hover states
+        heartIcon.style.opacity = .5; // Fade out
+        setTimeout(() => {
+            heartIcon.src = isHovering ? "images/active-hover.svg" : "images/active-filled.svg";
+            heartIcon.style.opacity = 1; // Fade back in
+        }, 150); // transition timing
     } else {
-        // If the heart is not "liked," show "hover" on hover, else show "default"
-        heartIcon.src = isHovering ? "images/hover.svg" : "images/default.svg";
+        // transition between default and hover states
+        heartIcon.style.opacity = .5; 
+        setTimeout(() => {
+            heartIcon.src = isHovering ? "images/hover.svg" : "images/default.svg";
+            heartIcon.style.opacity = 1;
+        }, 150); 
     }
-    
 }
 
 // Function to update the heart icon based on the like state
 function updateHeartIcon() {
     const heartIcon = document.getElementById("heart-icon");
 
-    // Update icon based on whether the button is liked or not
-    heartIcon.src = isLiked ? "images/active-filled.svg" : "images/default.svg";
+    // transition icon whether the button is liked or not
+    heartIcon.style.opacity = .5; 
+    setTimeout(() => {
+        heartIcon.src = isLiked ? "images/active-filled.svg" : "images/default.svg";
+        heartIcon.style.opacity = 1; 
+    }, 150); 
 }
+
 
 
 
 // Function to open the "Request Tour" modal
 function openModal() {
     const modal = document.getElementById("modal");
-    modal.style.display = "flex"; // Set display to flex when opening
+    modal.style.display = "flex"; 
     setTimeout(() => {
-        modal.classList.add("show"); // Add the class to show the modal with transition
-    }, 10); // Slight delay to allow for display to take effect
+        modal.classList.add("show"); 
+    }, 10); 
 }
 
-// Function to close the modal
 function closeModal() {
     const modal = document.getElementById("modal");
-    modal.classList.remove("show"); // Remove the class to start fade-out transition
+    modal.classList.remove("show"); 
 
-    // Wait for the transition to finish before setting display to none
     modal.addEventListener('transitionend', function() {
         if (!modal.classList.contains("show")) {
-            modal.style.display = "none"; // Hide the modal after transition
+            modal.style.display = "none"; 
         }
-    }, { once: true }); // Use once to ensure this event only runs once per close
+    }, { once: true });
 }
