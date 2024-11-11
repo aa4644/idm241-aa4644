@@ -3,54 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta Build</title>
-    <link rel="stylesheet" href="../beta/beta-build.css">
+    <title>Beta Description</title>
+    <link rel="stylesheet" href="./alpha/general.css">
 </head>
 <body>
 
     <div class="logo-container">
-        <img src="../alpha/assets/zillow_logo.svg" alt="Zillow logo">
+        <img src="./alpha/assets/zillow_logo.svg" alt="Zillow logo">
     </div>
 
     <div class="link-container">
-        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Beta Build - Zillow.com</h1></a>
+        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Beta Description - Zillow.com</h1></a>
     </div>
 
     <div class="subtitle-container">
         <h1>Interaction: Favorite Button, Property Modal Card, "Request Tour" Button, "X" Close Modal Button</h1>
     </div>
 
-    <div class="property-card-container">
-        <div class="property-card" onclick="window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');">
-            <div class="image-container">
-                <img src="property-image.png" alt="Property Image">
-                <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
-                    <img id="heart-icon" src="images/default.svg" alt="Like Button">
-                </button>
-            </div>
-            <div class="property-details">
-                <div class="price-row">
-                    <h2>$1,500,000</h2>
-                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
-                </div>
-                <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
-                <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
-                <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal for "Request Tour" (hidden)-->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Request a Tour</h2>
-            <!-- create for final build -->
-        </div>
-    </div>
-    
-    
-    
     
     <div class="container">
         <div class="box">
@@ -59,12 +28,14 @@
             <ul>
                 <li>hover ON</li>
                 <li>hover OFF</li>
+                <li>mouse DOWN</li>
                 <li>mouse UP</li>
             </ul>
             <p>Favorite Button - Active</p>
             <ul>
                 <li>hover ON</li>
                 <li>hover OFF</li>
+                <li>mouse DOWN</li>
                 <li>mouse UP</li>
             </ul>
             
@@ -106,6 +77,11 @@
                         <li>Outline changes back to white</li>
                     </ul>
                 </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
                 <li>mouse UP
                     <ul>
                         <li>Icon changes to filled, red heart</li>
@@ -125,6 +101,11 @@
                     <ul>
                         <li>Cursor remains as pointer</li>
                         <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
                     </ul>
                 </li>
                 <li>mouse UP
@@ -219,6 +200,11 @@
                         <li>Outline changes back to white</li>
                     </ul>
                 </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
                 <li>mouse UP
                     <ul>
                         <li>Icon changes to filled, red heart</li>
@@ -237,6 +223,11 @@
                     <ul>
                         <li>Cursor remains as pointer</li>
                         <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
                     </ul>
                 </li>
                 <li>mouse UP
@@ -335,7 +326,86 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="image-group">
+            <h2 class="image-group-title">Favorite Button - Default</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-default-1.png" alt="Favorite Button Default - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-default-2.png" alt="Favorite Button Default - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-default-3.png" alt="Favorite Button Default - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-default-4.png" alt="Favorite Button Default - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Favorite Button - Active</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-active-1.png" alt="Favorite Button Active - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-active-2.png" alt="Favorite Button Active - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-active-3.png" alt="Favorite Button Active - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/favorite-button-active-4.png" alt="Favorite Button Active - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Property Card Modal</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/property-card-modal-1.png" alt="Property Modal Card - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/property-card-modal-2.png" alt="Property Modal Card - Hover Off">
+                </div>
+            </div>
+            <h2 class="image-group-title">"Request Tour" Button</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/request-tour-1.png" alt="Request Tour Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/request-tour-2.png" alt="Request Tour Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/request-tour-3.png" alt="Request Tour Button - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/request-tour-4.png" alt="Request Tour Button - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">"X" Close Modal Button</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/close-modal-1.png" alt="Close Modal Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/close-modal-2.png" alt="Close Modal Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/close-modal-3.png" alt="Close Modal Button - Mouse Up">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/close-modal-4.png" alt="Close Modal Button">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--<div class="video-placeholder">
+        <video controls autoplay loop muted>
+            <source src="beta_video.mp4" type="video/mp4"> 
+        </video>
+    </div>-->
 
-    <script src="../beta/beta-script.js"></script>
+    <script src="../alpha/script.js"></script>
 </body>
 </html>
