@@ -17,13 +17,19 @@
     </div>
 
     <div class="subtitle-container">
-        <h1>Interaction: Favorite Button, Property Modal Card, "Request Tour" Button, "X" Close Modal Button, Date Selection Button, Image Scroll Buttons</h1>
+        <h1>Interaction: Property Modal Card, Favorite Button, Image Scroll Buttons, "Request Tour" Button, Date Selection Button, "X" Close Modal Button</h1>
     </div>
 
     
     <div class="container">
         <div class="box">
             <h2>Triggers</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+            </ul>
+
             <p>Favorite Button - Default</p>
             <ul>
                 <li>hover ON</li>
@@ -38,11 +44,12 @@
                 <li>mouse DOWN</li>
                 <li>mouse UP</li>
             </ul>
-            
-            <p>Property Modal Card</p>
+
+            <p>Image Scroll Buttons</p>
             <ul>
                 <li>hover ON</li>
                 <li>hover OFF</li>
+                <li>mouse UP</li>
             </ul>
 
             <p>"Request Tour" Button</p>
@@ -50,13 +57,6 @@
                 <li>hover ON</li>
                 <li>hover OFF</li>
                 <li>mouse DOWN</li>
-                <li>mouse UP</li>
-            </ul>
-
-            <p>"X" Close Modal Button</p>
-            <ul>
-                <li>hover ON</li>
-                <li>hover OFF</li>
                 <li>mouse UP</li>
             </ul>
 
@@ -75,7 +75,7 @@
                 <li>mouse UP</li>
             </ul>
 
-            <p>Image Scroll Buttons</p>
+            <p>"X" Close Modal Button</p>
             <ul>
                 <li>hover ON</li>
                 <li>hover OFF</li>
@@ -85,6 +85,26 @@
 
         <div class="box">
             <h2>Rules</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button fades in</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button fades out</li>
+                    </ul>
+                </li>
+            </ul>
+
             <p>Favorite Button - Default</p>
             <ul>
                 <li>hover ON
@@ -138,22 +158,24 @@
                 </li>
             </ul>
 
-            <p>Property Modal Card</p>
+            <p>Image Scroll Buttons</p>
             <ul>
                 <li>hover ON
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Card enlarges 25%</li>
-                        <li>Black shadow at 25% opacity appears around card</li>
-                        <li>"Request Tour" button fades in</li>
+                        <li>Arrows and page image indicator appears</li>
                     </ul>
                 </li>
                 <li>hover OFF
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Card returns to original size</li>
-                        <li>Black shadow opacity turns to 10% around card</li>
-                        <li>"Request Tour" button fades out</li>
+                        <li>Arrows and page image indicator disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
+                        <li>Page indicator switches to what image number page user is on</li>
                     </ul>
                 </li>
             </ul>
@@ -180,27 +202,6 @@
                 <li>mouse UP
                     <ul>
                         <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p>"X" Close Modal Button</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor remains as pointer</li>
-                        <li>Icon changes from black to blue</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor remains as pointer</li>
-                        <li>Icon changes back to black</li>
-                    </ul>
-                </li>
-                <li>mouse UP
-                    <ul>
-                        <li>Pop-up modal closes</li>
                     </ul>
                 </li>
             </ul>
@@ -266,24 +267,23 @@
                 </li>
             </ul>
 
-            <p>Image Scroll Buttons</p>
+            <p>"X" Close Modal Button</p>
             <ul>
                 <li>hover ON
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Arrows and page image indicator appears</li>
+                        <li>Icon changes from black to blue</li>
                     </ul>
                 </li>
                 <li>hover OFF
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Arrows and page image indicator disappears</li>
+                        <li>Icon changes back to black</li>
                     </ul>
                 </li>
                 <li>mouse UP
                     <ul>
-                        <li>image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
-                        <li>Page indicator switches to what image number page user is on</li>
+                        <li>Pop-up modal closes</li>
                     </ul>
                 </li>
             </ul>
@@ -291,6 +291,26 @@
 
         <div class="box">
             <h2>Feedback</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button fades in</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button fades out</li>
+                    </ul>
+                </li>
+            </ul>
+
             <p>Favorite Button - Default</p>
             <ul>
                 <li>hover ON
@@ -342,22 +362,24 @@
                 </li>
             </ul>
 
-            <p>Property Modal Card</p>
+            <p>Image Scroll Buttons</p>
             <ul>
                 <li>hover ON
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Card enlarges 25%</li>
-                        <li>Black shadow at 25% opacity appears around card</li>
-                        <li>"Request Tour" button fades in</li>
+                        <li>Arrows and page image indicator appears</li>
                     </ul>
                 </li>
                 <li>hover OFF
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Card returns to original size</li>
-                        <li>Black shadow opacity turns to 10% around card</li>
-                        <li>"Request Tour" button fades out</li>
+                        <li>Arrows and page image indicator disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
+                        <li>Page indicator switches to what image number page user is on</li>
                     </ul>
                 </li>
             </ul>
@@ -384,27 +406,6 @@
                 <li>mouse UP
                     <ul>
                         <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p>"X" Close Modal Button</p>
-            <ul>
-                <li>hover ON
-                    <ul>
-                        <li>Cursor remains as pointer</li>
-                        <li>Icon changes from black to blue</li>
-                    </ul>
-                </li>
-                <li>hover OFF
-                    <ul>
-                        <li>Cursor remains as pointer</li>
-                        <li>Icon changes back to black</li>
-                    </ul>
-                </li>
-                <li>mouse UP
-                    <ul>
-                        <li>Pop-up modal closes</li>
                     </ul>
                 </li>
             </ul>
@@ -468,24 +469,23 @@
                 </li>
             </ul>
 
-            <p>Image Scroll Buttons</p>
+            <p>"X" Close Modal Button</p>
             <ul>
                 <li>hover ON
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Arrows and page image indicator appears</li>
+                        <li>Icon changes from black to blue</li>
                     </ul>
                 </li>
                 <li>hover OFF
                     <ul>
                         <li>Cursor remains as pointer</li>
-                        <li>Arrows and page image indicator disappears</li>
+                        <li>Icon changes back to black</li>
                     </ul>
                 </li>
                 <li>mouse UP
                     <ul>
-                        <li>image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
-                        <li>Page indicator switches to what image number page user is on</li>
+                        <li>Pop-up modal closes</li>
                     </ul>
                 </li>
             </ul>
@@ -514,6 +514,15 @@
 
     <div class="container">
         <div class="image-group">
+            <h2 class="image-group-title">Property Card Modal</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="./beta_images/property-card-modal-1.png" alt="Property Modal Card - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/property-card-modal-2.png" alt="Property Modal Card - Hover Off">
+                </div>
+            </div>
             <h2 class="image-group-title">Favorite Button - Default</h2>
             <div class="image-grid">
                 <div class="image-item">
@@ -544,13 +553,16 @@
                     <img src="./beta_images/favorite-button-active-4.png" alt="Favorite Button Active - Mouse Up">
                 </div>
             </div>
-            <h2 class="image-group-title">Property Card Modal</h2>
+            <h2 class="image-group-title">Image Scroll Buttons</h2>
             <div class="image-grid">
                 <div class="image-item">
-                    <img src="./beta_images/property-card-modal-1.png" alt="Property Modal Card - Hover ON">
+                    <img src="./beta_images/image-scroll-1.png" alt="Image Scroll - Hover ON">
                 </div>
                 <div class="image-item">
-                    <img src="./beta_images/property-card-modal-2.png" alt="Property Modal Card - Hover Off">
+                    <img src="./beta_images/image-scroll-2.png" alt="Image Scroll - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/image-scroll-3.png" alt="Image Scroll - Mouse Up">
                 </div>
             </div>
             <h2 class="image-group-title">"Request Tour" Button</h2>
@@ -566,21 +578,6 @@
                 </div>
                 <div class="image-item">
                     <img src="./beta_images/request-tour-4.png" alt="Request Tour Button - Mouse Up">
-                </div>
-            </div>
-            <h2 class="image-group-title">"X" Close Modal Button</h2>
-            <div class="image-grid">
-                <div class="image-item">
-                    <img src="./beta_images/close-modal-1.png" alt="Close Modal Button - Hover ON">
-                </div>
-                <div class="image-item">
-                    <img src="./beta_images/close-modal-2.png" alt="Close Modal Button - Hover Off">
-                </div>
-                <div class="image-item">
-                    <img src="./beta_images/close-modal-3.png" alt="Close Modal Button - Mouse Up">
-                </div>
-                <div class="image-item">
-                    <img src="./beta_images/close-modal-4.png" alt="Close Modal Button">
                 </div>
             </div>
             <h2 class="image-group-title">Date Selection Button - Default</h2>
@@ -613,16 +610,19 @@
                     <img src="./beta_images/date-active-4.png" alt="Date Selection Button - Mouse Up">
                 </div>
             </div>
-            <h2 class="image-group-title">Image Scroll Buttons</h2>
+            <h2 class="image-group-title">"X" Close Modal Button</h2>
             <div class="image-grid">
                 <div class="image-item">
-                    <img src="./beta_images/image-scroll-1.png" alt="Image Scroll - Hover ON">
+                    <img src="./beta_images/close-modal-1.png" alt="Close Modal Button - Hover ON">
                 </div>
                 <div class="image-item">
-                    <img src="./beta_images/image-scroll-2.png" alt="Image Scroll - Hover Off">
+                    <img src="./beta_images/close-modal-2.png" alt="Close Modal Button - Hover Off">
                 </div>
                 <div class="image-item">
-                    <img src="./beta_images/image-scroll-3.png" alt="Image Scroll - Mouse Up">
+                    <img src="./beta_images/close-modal-3.png" alt="Close Modal Button - Mouse Up">
+                </div>
+                <div class="image-item">
+                    <img src="./beta_images/close-modal-4.png" alt="Close Modal Button">
                 </div>
             </div>
         </div>
