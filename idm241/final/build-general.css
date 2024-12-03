@@ -309,7 +309,7 @@ li {
 
 .carousel-images-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
     width: 300%; /* Adjust this based on the number of images */
 }
 
@@ -322,7 +322,7 @@ li {
 
 .carousel-images-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
     width: auto;  /* Automatically adjust to the number of images */
 }
 
@@ -354,6 +354,7 @@ li {
 
 .image-container:hover .carousel-btn {
     display: block;
+    
 }
 
 /* Carousel Indicators */
@@ -377,9 +378,9 @@ li {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #8e8e8e;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.8s;
 }
 
 .indicator.active {
@@ -622,23 +623,27 @@ li {
 
 .date:hover {
     background-color: #e0e0e0;
-    border-color: #7E7E7E;
-    box-shadow: 0px 0px 8px rgba(126, 126, 126, 0.8);
+    border-color: #a2a2a2;
+    box-shadow: 0px 0px 8px rgba(162, 162, 162, 0.9);
+    transition: border-color 0.8s, box-shadow 0.8s, background-color 0.8s;
 }
 
 .date.active {
     background-color: #DBE6FF; /* Color when clicked*/
     border-color: #0041D9;
     color: #0041D9;
+    transition: border-color 0.8s, color 0.8s, background-color 0.8s;
 }
 
 .date.hold {
     background-color: #9FBCFF; 
     border-color: #0041D9;
+    transition: border-color 0.8s, box-shadow 0.8s, background-color 0.8s;
 }
 
 .date.active:hover {
     box-shadow: 0px 0px 8px rgba(0, 65, 217, 0.8);
+    transition: border-color 0.8s, box-shadow 0.8s, background-color 0.8s;
 }
 
 
