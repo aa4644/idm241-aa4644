@@ -24,7 +24,21 @@
     <div class="property-card-container">
         <div class="property-card" onclick="window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');">
             <div class="image-container">
-                <img src="images/property-image.png" alt="Property Image">
+                <div class="carousel-container">
+                    <div class="carousel-images-wrapper">
+                        <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
+                        <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
+                        <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
+                    </div>
+                    <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
+
+                    <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
                 <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
                     <img id="heart-icon" src="images/default.svg" alt="Like Button">
                 </button>
@@ -40,13 +54,14 @@
             </div>
         </div>
     </div>
+    
     <!-- Modal for "Request Tour" (hidden)-->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Request a Tour</h2>
             <div class="property-info">
-                <img src="images/property-image.png" alt="Property Image" class="property-image">
+                <img src="images/property-image1.png" alt="Property Image" class="property-image">
                 <div class="property-details">
                     <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
                     <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>

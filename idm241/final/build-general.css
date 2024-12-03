@@ -293,11 +293,106 @@ li {
 .property-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transition: .7s;
+    transition: 0.7s;
 }
 
 .image-container {
     position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.carousel-images-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Adjust this based on the number of images */
+}
+
+.carousel-image {
+    width: 300px;  /* Fixed width for the images */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover;  /* Ensure image covers container */
+    flex-shrink: 0;  /* Prevent shrinking */
+}
+
+.carousel-images-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;  /* Automatically adjust to the number of images */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
+    display: none;
+    transition: background 0.3s;
+}
+
+.carousel-btn.left {
+    right: 10px;
+}
+
+.carousel-btn.right {
+    left: 10px;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.image-container:hover .carousel-btn {
+    display: block;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+.image-container:hover .carousel-indicators {
+    display: flex;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background-color: #fff;
+}
+
+
+/* Favorite Button */
+.favorite-btn img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease; /* Added filter transition */
 }
 
 .favorite-btn {
@@ -308,13 +403,29 @@ li {
     border: none;
     cursor: pointer;
     padding: 5px;
+    z-index: 10; /* Ensure it's above the carousel but below the modal */
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-.favorite-btn img {
-    width: 40px;
-    height: 40px;
-    transition: opacity 0.3s ease;
+/* Hover State for Favorite Button */
+.favorite-btn:hover img {
+    opacity: 0.8; /* Dim the image slightly on hover */
+    transform: scale(1.1); /* Slightly enlarge the heart icon */
 }
+
+/* Active State for Favorite Button */
+.favorite-btn:active img {
+    transform: scale(0.9); /* Create a "pressed" effect */
+}
+
+/* When the button is clicked and toggled to "favorited" (red heart) */
+.favorite-btn.favorited img {
+    filter: hue-rotate(0deg) saturate(200%) brightness(1.2); /* Adjust red intensity */
+    transition: filter 0.8s ease; /* Ensure the color transition is smooth and gradual */
+}
+
+
+
 
 .property-details {
     padding-top: 0;
@@ -323,7 +434,7 @@ li {
     padding-right: 16px;
 }
 
-
+/* Request Tour Button */
 .price-row {
     display: flex;
     justify-content: space-between;
@@ -336,7 +447,6 @@ li {
     margin-bottom: 5px;
     margin-top: 5px;
 }
-
 
 .request-tour-btn {
     opacity: 0; /* Start invisible */
@@ -351,10 +461,9 @@ li {
     transition: opacity 0.7s, visibility 0.7s, background-color 0.7s; /* Add transition to opacity and visibility */
 }
 
-/* Show Request Tour button with fade-in on hover */
 .property-card:hover .request-tour-btn {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Show the button */
+    opacity: 1;
+    visibility: visible;
 }
 
 .request-tour-btn:hover {
@@ -370,8 +479,19 @@ li {
     margin: 5px 0;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+
+/* for the pop-up request tour form */
 .modal {
+    z-index: 100;
     display: none; 
     position: fixed;
     top: 0;
@@ -482,6 +602,48 @@ li {
     border-radius: 5px;
     font-size: 14px;
 }
+
+.date-picker {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.date {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 30%;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.date:hover {
+    background-color: #e0e0e0;
+    border-color: #7E7E7E;
+    box-shadow: 0px 0px 8px rgba(126, 126, 126, 0.6);
+}
+
+.date.active {
+    background-color: #DBE6FF; /* Color when clicked*/
+    border-color: #0041D9;
+    color: #0041D9;
+    box-shadow: 0px 0px 8px rgba(0, 65, 217, 0.6);
+}
+
+.date.hold {
+    background-color: #9FBCFF; 
+    border-color: #0041D9;
+}
+
+.date.active:hover {
+
+}
+
+
 
 /*.modal {
     display: none; 

@@ -61,3 +61,71 @@ function closeModal() {
         }
     }, { once: true });
 }
+
+
+
+let currentImageIndex = 0;
+let slides = document.querySelectorAll(".carousel-image");
+let totalImages = slides.length;
+let carouselWrapper = document.querySelector('.carousel-images-wrapper');
+
+// Function to change the image based on direction
+function changeImage(direction) {
+    // Update the currentImageIndex to go left or right
+    currentImageIndex = (currentImageIndex + direction + totalImages) % totalImages;
+
+    // Move the carousel wrapper to the correct position
+    carouselWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+
+    // Update the indicator active class
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.remove('active');
+        if (index === currentImageIndex) {
+            indicator.classList.add('active');
+        }
+    });
+}
+
+// Event listener for the left and right buttons
+document.querySelector('.carousel-btn.left').addEventListener('click', () => changeImage(-1));  // Move backward on left
+document.querySelector('.carousel-btn.right').addEventListener('click', () => changeImage(1)); // Move forward on right
+
+// Initialize: Ensure the first image is active on load
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the first image's active state
+    const firstImage = document.querySelector('.carousel-image');
+    const indicators = document.querySelectorAll('.indicator');
+    if (firstImage) {
+        firstImage.classList.add('active');
+        indicators[0].classList.add('active'); // Ensure the first indicator is active
+    }
+});
+
+
+
+const dates = document.querySelectorAll('.date');
+
+dates.forEach(date => {
+    date.addEventListener('click', () => {
+        // Toggle the active class on the clicked date
+        date.classList.toggle('active');
+    });
+
+    let pressTimer;
+    date.addEventListener('mousedown', () => {
+        pressTimer = setTimeout(() => {
+            date.classList.add('hold');  // Add hold class when clicked and held
+        }, 1);  // Hold duration (500ms)
+    });
+
+    date.addEventListener('mouseup', () => {
+        clearTimeout(pressTimer);  // Clear hold timer on mouse release
+        date.classList.remove('hold');  // Remove hold class
+    });
+
+    date.addEventListener('mouseleave', () => {
+        clearTimeout(pressTimer);  // Clear hold timer if mouse leaves button
+        date.classList.remove('hold');  // Remove hold class
+    });
+});
