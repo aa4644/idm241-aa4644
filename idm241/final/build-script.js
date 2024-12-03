@@ -131,12 +131,10 @@ dates.forEach(date => {
 });
 
 function showLoadingAndRedirect() {
-    // Show the loading spinner
     document.getElementById('loading-spinner').style.display = 'flex';
     
-    // Delay redirection to Zillow by 2 seconds (for loading spinner to appear)
     setTimeout(function() {
         window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');
-        document.getElementById('loading-spinner').style.display = 'none'; // Hide the spinner
+        document.getElementById('loading-spinner').style.display = 'none'; 
     }, 1500); 
 }

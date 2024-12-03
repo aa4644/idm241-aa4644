@@ -212,17 +212,11 @@ li {
 }
 
 /* Final Build */
-.property-cards-wrapper {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: center; /* Center the cards */
-    gap: 10px; /* Add space between the cards */
-}
-
 .property-card-container {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .property-card {
@@ -236,13 +230,11 @@ li {
     cursor: pointer;
 }
 
-/* Hover effect */
 .property-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: 0.7s;
 }
-
 
 .image-container {
     position: relative;
@@ -376,7 +368,7 @@ li {
 
 
 .property-details {
-    padding-top: 10px;
+    padding-top: 0;
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
@@ -493,7 +485,7 @@ li {
 
 .property-image {
     width: 120px;
-    height: 120px;
+    height: 80px;
     border-radius: 5px;
     object-fit: cover;
 }

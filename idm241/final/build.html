@@ -23,200 +23,71 @@
     <div id="loading-spinner" style="display:none;">
         <div class="spinner"></div>
     </div>
-    <div class="property-cards-wrapper">
-        <div class="property-card-container">
-            <div class="property-card" onclick="showLoadingAndRedirect();">
-                <div class="image-container">
-                    <div class="carousel-container">
-                        <div class="carousel-images-wrapper">
-                            <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
-                            <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
-                            <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
-                        </div>
-                        <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
 
-                        <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
-                        <div class="carousel-indicators">
-                            <span class="indicator active"></span>
-                            <span class="indicator"></span>
-                            <span class="indicator"></span>
-                        </div>
+    <!-- there should be an animation that occurs before going off into zillow; make sure there is 3 examples side-by-side-->
+    <div class="property-card-container">
+        <div class="property-card" onclick="showLoadingAndRedirect();">
+            <div class="image-container">
+                <div class="carousel-container">
+                    <div class="carousel-images-wrapper">
+                        <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
+                        <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
+                        <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
                     </div>
-                    <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
-                        <img id="heart-icon" src="images/default.svg" alt="Like Button">
-                    </button>
-                </div>
-                <div class="property-details">
-                    <div class="price-row">
-                        <h2>$1,500,000</h2>
-                        <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                    <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
+
+                    <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
                     </div>
-                    <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
-                    <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
-                    <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
                 </div>
+                <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
+                    <img id="heart-icon" src="images/default.svg" alt="Like Button">
+                </button>
+            </div>
+            <div class="property-details">
+                <div class="price-row">
+                    <h2>$1,500,000</h2>
+                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                </div>
+                <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
+                <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
+                <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
             </div>
         </div>
-        <!-- Modal for "Request Tour" (hidden)-->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Request a Tour</h2>
-                <div class="property-info">
-                    <img src="images/property-image1.png" alt="Property Image" class="property-image">
-                    <div class="property-details">
-                        <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
-                        <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
-                    </div>
-                </div>
-                <div class="tip">
-                    <span class="icon">💡</span>
-                    <p>Tip: Selecting multiple times helps schedule your tour faster</p>
-                </div>
-                <hr>
-                <div class="schedule">
-                    <p><strong>Select up to 3 times</strong></p>
-                    <div class="date-picker">
-                        <button class="date">FRI<br>Oct 25</button>
-                        <button class="date">SAT<br>Oct 26</button>
-                        <button class="date">SUN<br>Oct 27</button>
-                    </div>
-                    <select class="time-selector">
-                        <option>11:00 am</option>
-                        <option>12:00 pm</option>
-                        <option>1:00 pm</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="property-card-container">
-            <div class="property-card" onclick="showLoadingAndRedirect();">
-                <div class="image-container">
-                    <div class="carousel-container">
-                        <div class="carousel-images-wrapper">
-                            <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
-                            <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
-                            <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
-                        </div>
-                        <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
+    </div>
     
-                        <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
-                        <div class="carousel-indicators">
-                            <span class="indicator active"></span>
-                            <span class="indicator"></span>
-                            <span class="indicator"></span>
-                        </div>
-                    </div>
-                    <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
-                        <img id="heart-icon" src="images/default.svg" alt="Like Button">
-                    </button>
-                </div>
+    <!-- Modal for "Request Tour" (hidden)-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Request a Tour</h2>
+            <div class="property-info">
+                <img src="images/property-image1.png" alt="Property Image" class="property-image">
                 <div class="property-details">
-                    <div class="price-row">
-                        <h2>$1,500,000</h2>
-                        <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
-                    </div>
-                    <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
-                    <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
-                    <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
+                    <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
+                    <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
                 </div>
             </div>
-        </div>
-        <!-- Modal for "Request Tour" (hidden)-->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Request a Tour</h2>
-                <div class="property-info">
-                    <img src="images/property-image1.png" alt="Property Image" class="property-image">
-                    <div class="property-details">
-                        <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
-                        <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
-                    </div>
-                </div>
-                <div class="tip">
-                    <span class="icon">💡</span>
-                    <p>Tip: Selecting multiple times helps schedule your tour faster</p>
-                </div>
-                <hr>
-                <div class="schedule">
-                    <p><strong>Select up to 3 times</strong></p>
-                    <div class="date-picker">
-                        <button class="date">FRI<br>Oct 25</button>
-                        <button class="date">SAT<br>Oct 26</button>
-                        <button class="date">SUN<br>Oct 27</button>
-                    </div>
-                    <select class="time-selector">
-                        <option>11:00 am</option>
-                        <option>12:00 pm</option>
-                        <option>1:00 pm</option>
-                    </select>
-                </div>
+            <div class="tip">
+                <span class="icon">💡</span>
+                <p>Tip: Selecting multiple times helps schedule your tour faster</p>
             </div>
-        </div>
-        <div class="property-card-container">
-            <div class="property-card" onclick="showLoadingAndRedirect();">
-                <div class="image-container">
-                    <div class="carousel-container">
-                        <div class="carousel-images-wrapper">
-                            <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
-                            <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
-                            <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
-                        </div>
-                        <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
-    
-                        <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
-                        <div class="carousel-indicators">
-                            <span class="indicator active"></span>
-                            <span class="indicator"></span>
-                            <span class="indicator"></span>
-                        </div>
-                    </div>
-                    <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
-                        <img id="heart-icon" src="images/default.svg" alt="Like Button">
-                    </button>
+            <hr>
+            <div class="schedule">
+                <p><strong>Select up to 3 times</strong></p>
+                <div class="date-picker">
+                    <button class="date">FRI<br>Oct 25</button>
+                    <button class="date">SAT<br>Oct 26</button>
+                    <button class="date">SUN<br>Oct 27</button>
                 </div>
-                <div class="property-details">
-                    <div class="price-row">
-                        <h2>$1,500,000</h2>
-                        <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
-                    </div>
-                    <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
-                    <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
-                    <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
-                </div>
-            </div>
-        </div>
-        <!-- Modal for "Request Tour" (hidden)-->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Request a Tour</h2>
-                <div class="property-info">
-                    <img src="images/property-image1.png" alt="Property Image" class="property-image">
-                    <div class="property-details">
-                        <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
-                        <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
-                    </div>
-                </div>
-                <div class="tip">
-                    <span class="icon">💡</span>
-                    <p>Tip: Selecting multiple times helps schedule your tour faster</p>
-                </div>
-                <hr>
-                <div class="schedule">
-                    <p><strong>Select up to 3 times</strong></p>
-                    <div class="date-picker">
-                        <button class="date">FRI<br>Oct 25</button>
-                        <button class="date">SAT<br>Oct 26</button>
-                        <button class="date">SUN<br>Oct 27</button>
-                    </div>
-                    <select class="time-selector">
-                        <option>11:00 am</option>
-                        <option>12:00 pm</option>
-                        <option>1:00 pm</option>
-                    </select>
-                </div>
+                <select class="time-selector">
+                    <option>11:00 am</option>
+                    <option>12:00 pm</option>
+                    <option>1:00 pm</option>
+                </select>
             </div>
         </div>
     </div>
