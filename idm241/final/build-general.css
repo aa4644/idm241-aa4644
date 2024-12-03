@@ -530,6 +530,7 @@ li {
 
 .close:hover {
     color: #0041D9;
+    transition: color 0.8s;
 }
 
 .modal h2 {
