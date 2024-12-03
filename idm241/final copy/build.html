@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Description</title>
+    <link rel="stylesheet" href="build-general.css">
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="images/zillow_logo.svg" alt="Zillow logo">
+    </div>
+
+    <div class="link-container">
+        <a href="https://www.zillow.com/" target="_blank"><h1>IDM 241: Final Description - Zillow.com</h1></a>
+    </div>
+
+    <div class="subtitle-container">
+        <h1>Interaction: Property Modal Card, Favorite Button, Image Scroll Buttons, "Request Tour" Button, Date Selection Button, "X" Close Modal Button</h1>
+    </div>
+
+    <!-- there should be an animation that occurs before going off into zillow; make sure there is 3 examples side-by-side-->
+    <div class="property-card-container">
+        <div class="property-card" onclick="window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');">
+            <div class="image-container">
+                <div class="carousel-container">
+                    <div class="carousel-images-wrapper">
+                        <img class="carousel-image active" src="images/property-image1.png" alt="Property Image 1">
+                        <img class="carousel-image" src="images/property-image2.png" alt="Property Image 2">
+                        <img class="carousel-image" src="images/property-image3.png" alt="Property Image 3">
+                    </div>
+                    <button class="carousel-btn right" onclick="event.stopPropagation(); changeImage(1)">&#8249;</button>
+
+                    <button class="carousel-btn left" onclick="event.stopPropagation(); changeImage(-1)">&#8250;</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+                <button class="favorite-btn" onclick="toggleLike(event)" onmouseover="handleHover(true)" onmouseout="handleHover(false)">
+                    <img id="heart-icon" src="images/default.svg" alt="Like Button">
+                </button>
+            </div>
+            <div class="property-details">
+                <div class="price-row">
+                    <h2>$1,500,000</h2>
+                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                </div>
+                <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
+                <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
+                <p class="mls-id">MLS ID #ML81984251, Leticia Panuco</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for "Request Tour" (hidden)-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Request a Tour</h2>
+            <div class="property-info">
+                <img src="images/property-image1.png" alt="Property Image" class="property-image">
+                <div class="property-details">
+                    <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
+                    <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
+                </div>
+            </div>
+            <div class="tip">
+                <span class="icon">💡</span>
+                <p>Tip: Selecting multiple times helps schedule your tour faster</p>
+            </div>
+            <hr>
+            <div class="schedule">
+                <p><strong>Select up to 3 times</strong></p>
+                <div class="date-picker">
+                    <button class="date">FRI<br>Oct 25</button>
+                    <button class="date">SAT<br>Oct 26</button>
+                    <button class="date">SUN<br>Oct 27</button>
+                </div>
+                <select class="time-selector">
+                    <option>11:00 am</option>
+                    <option>12:00 pm</option>
+                    <option>1:00 pm</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!-- information about the build-->
+    <div class="container">
+        <div class="box">
+            <h2>Triggers</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+            </ul>
+
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+
+            <p>Image Scroll Buttons</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse UP</li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+
+            <p>Date Selection Button - Active</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+            <p>Date Selection Button - Default</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse DOWN</li>
+                <li>mouse UP</li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON</li>
+                <li>hover OFF</li>
+                <li>mouse UP</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Rules</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button fades in</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button fades out</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes to filled, red heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Image Scroll Buttons</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Arrows and page image indicator appears</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Arrows and page image indicator disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
+                        <li>Page indicator switches to what image number page user is on</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Date Selection Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Button background fills with black at 25%</li>
+                        <li>Black shadow at 25% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes to back to default</li>
+                        <li>Button background returns to transparent filling</li>
+                        <li>Black shadow disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                        <li>Blue shadow at 50% opacity appears around button</li>
+                        <li>Text and outline changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Button background fills with blue at 25% opacity</li>
+                        <li>Blue shadow at 25% opacity appears around button</li>
+                        <li>Datebase updates</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Date Selection Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Blue shadow at 50% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes to back to default</li>
+                        <li>Blue shadow changes back to 25% opacity around button</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>button background fills with blue at 50% opacity</li>
+                        <li>blue shadow at 50% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Button background returns to transparent filling</li>
+                        <li>Blue shadow disappears, text and outline changes from blue to black</li>
+                        <li>Database updates</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes back to black</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Pop-up modal closes</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Feedback</h2>
+            <p>Property Modal Card</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card enlarges 25%</li>
+                        <li>Black shadow at 25% opacity appears around card</li>
+                        <li>"Request Tour" button fades in</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Card returns to original size</li>
+                        <li>Black shadow opacity turns to 10% around card</li>
+                        <li>"Request Tour" button fades out</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Favorite Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes from white to red</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Outline changes back to white</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes to filled, red heart</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Favorite Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow appears around icon</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Red glow around icon disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Icon changes back to white, outlined heart</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Image Scroll Buttons</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Arrows and page image indicator appears</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Arrows and page image indicator disappears</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Image slides to the left if clicked using right arrow and slides to the right if clicked using left arrow</li>
+                        <li>Page indicator switches to what image number page user is on</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"Request Tour" Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background fills with blue at 25% opacity</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Button background returns to tranparent filling</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Date Selection Button - Default</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Button background fills with black at 25%</li>
+                        <li>Black shadow at 25% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes to back to default</li>
+                        <li>Button background returns to transparent filling</li>
+                        <li>Black shadow disappears</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>Button background fills with blue at 50% opacity</li>
+                        <li>Blue shadow at 50% opacity appears around button</li>
+                        <li>Text and outline changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Button background fills with blue at 25% opacity</li>
+                        <li>Blue shadow at 25% opacity appears around button</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>Date Selection Button - Active</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor changes to pointer</li>
+                        <li>Blue shadow at 50% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor changes to back to default</li>
+                        <li>Blue shadow changes back to 25% opacity around button</li>
+                    </ul>
+                </li>
+                <li>mouse DOWN
+                    <ul>
+                        <li>button background fills with blue at 50% opacity</li>
+                        <li>blue shadow at 50% opacity appears around button</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Button background returns to transparent filling</li>
+                        <li>Blue shadow disappears, text and outline changes from blue to black</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>"X" Close Modal Button</p>
+            <ul>
+                <li>hover ON
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes from black to blue</li>
+                    </ul>
+                </li>
+                <li>hover OFF
+                    <ul>
+                        <li>Cursor remains as pointer</li>
+                        <li>Icon changes back to black</li>
+                    </ul>
+                </li>
+                <li>mouse UP
+                    <ul>
+                        <li>Pop-up modal closes</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Loops & Modes</h2>
+            <ul>
+                <li>Loops
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+                <li>Modes: mouse UP 
+                    <ul>
+                        <li>"Request Tour" Button - Default
+                            <ul>
+                                <li>"Request Tour" modal opens, allowing user to select and enter their preferred tour date and time</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-group">
+            <h2 class="image-group-title">Property Card Modal</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/property-card-modal-1.png" alt="Property Modal Card - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/property-card-modal-2.png" alt="Property Modal Card - Hover Off">
+                </div>
+            </div>
+            <h2 class="image-group-title">Favorite Button - Default</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-default-1.png" alt="Favorite Button Default - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-default-2.png" alt="Favorite Button Default - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-default-3.png" alt="Favorite Button Default - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-default-4.png" alt="Favorite Button Default - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Favorite Button - Active</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-active-1.png" alt="Favorite Button Active - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-active-2.png" alt="Favorite Button Active - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-active-3.png" alt="Favorite Button Active - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/favorite-button-active-4.png" alt="Favorite Button Active - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Image Scroll Buttons</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/image-scroll-1.png" alt="Image Scroll - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/image-scroll-2.png" alt="Image Scroll - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/image-scroll-3.png" alt="Image Scroll - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">"Request Tour" Button</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/request-tour-1.png" alt="Request Tour Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/request-tour-2.png" alt="Request Tour Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/request-tour-3.png" alt="Request Tour Button - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/request-tour-4.png" alt="Request Tour Button - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Date Selection Button - Default</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/date-default-1.png" alt="Date Selection Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-default-2.png" alt="Date Selection Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-default-3.png" alt="Date Selection Button - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-default-4.png" alt="Date Selection Button - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">Date Selection Button - Active</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src=".,/beta_images/date-active-1.png" alt="Date Selection Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-active-2.png" alt="Date Selection Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-active-3.png" alt="Date Selection Button - Mouse Down">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/date-active-4.png" alt="Date Selection Button - Mouse Up">
+                </div>
+            </div>
+            <h2 class="image-group-title">"X" Close Modal Button</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../beta_images/close-modal-1.png" alt="Close Modal Button - Hover ON">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/close-modal-2.png" alt="Close Modal Button - Hover Off">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/close-modal-3.png" alt="Close Modal Button - Mouse Up">
+                </div>
+                <div class="image-item">
+                    <img src="../beta_images/close-modal-4.png" alt="Close Modal Button">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="build-script.js"></script>
+</body>
+</html>
