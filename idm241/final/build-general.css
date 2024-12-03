@@ -212,11 +212,17 @@ li {
 }
 
 /* Final Build */
+.property-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: center; /* Center the cards */
+    gap: 10px; /* Add space between the cards */
+}
+
 .property-card-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .property-card {
@@ -230,11 +236,13 @@ li {
     cursor: pointer;
 }
 
+/* Hover effect */
 .property-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: 0.7s;
 }
+
 
 .image-container {
     position: relative;
@@ -368,7 +376,7 @@ li {
 
 
 .property-details {
-    padding-top: 0;
+    padding-top: 10px;
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
@@ -430,6 +438,7 @@ li {
 
 
 /* for the pop-up request tour form */
+
 .modal {
     z-index: 100;
     display: none; 
@@ -484,7 +493,7 @@ li {
 
 .property-image {
     width: 120px;
-    height: 80px;
+    height: 120px;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -585,4 +594,31 @@ li {
 .date.active:hover {
     box-shadow: 0px 0px 8px rgba(0, 65, 217, 0.8);
     transition: border-color 0.8s, box-shadow 0.8s, background-color 0.8s;
+}
+
+#loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
