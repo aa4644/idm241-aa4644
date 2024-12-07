@@ -1,140 +1,170 @@
-let isLiked = false; 
-
+// -----------------------------
+// Like Button and Hover Effects
+// -----------------------------
 function toggleLike(event) {
     event.stopPropagation(); // Prevents the card click event from triggering
-    isLiked = !isLiked;
-    updateHeartIcon();
+
+    const heartIcon = event.target; // Get the heart icon that was clicked
+    const isLiked = heartIcon.classList.toggle('favorited'); // Toggle the 'favorited' class
+
+    const newSrc = isLiked ? "images/active-filled.svg" : "images/default.svg";
+    fadeAndSwapIcon(heartIcon, newSrc);
 }
 
-// Function to handle hover on the like button
-function handleHover(isHovering) {
-    const heartIcon = document.getElementById("heart-icon");
+function handleHover(event, isHovering) {
+    const heartIcon = event.target;
 
-    if (isLiked) {
-        // transition between active-filled and active-hover states
-        heartIcon.style.opacity = .5; // Fade out
-        setTimeout(() => {
-            heartIcon.src = isHovering ? "images/active-hover.svg" : "images/active-filled.svg";
-            heartIcon.style.opacity = 1; // Fade back in
-        }, 150); // transition timing
-    } else {
-        // transition between default and hover states
-        heartIcon.style.opacity = .5; 
-        setTimeout(() => {
-            heartIcon.src = isHovering ? "images/hover.svg" : "images/default.svg";
-            heartIcon.style.opacity = 1;
-        }, 150); 
+    if (heartIcon.tagName === 'IMG') {
+        const isLiked = heartIcon.classList.contains('favorited');
+        const nextSrc = isLiked
+            ? (isHovering ? "images/active-hover.svg" : "images/active-filled.svg")
+            : (isHovering ? "images/hover.svg" : "images/default.svg");
+
+        fadeAndSwapIcon(heartIcon, nextSrc);
     }
 }
 
-// Function to update the heart icon based on the like state
-function updateHeartIcon() {
-    const heartIcon = document.getElementById("heart-icon");
+function fadeAndSwapIcon(iconElement, newSrc) {
+    iconElement.style.opacity = 0.5; // Fade out
 
-    // transition icon whether the button is liked or not
-    heartIcon.style.opacity = .5; 
     setTimeout(() => {
-        heartIcon.src = isLiked ? "images/active-filled.svg" : "images/default.svg";
-        heartIcon.style.opacity = 1; 
-    }, 150); 
+        iconElement.src = newSrc;
+        iconElement.style.opacity = 1; // Fade back in
+    }, 400); // Match half the CSS transition time
 }
 
-
-
-
-// Function to open the "Request Tour" modal
+// -----------------------------
+// Modal Management
+// -----------------------------
 function openModal() {
     const modal = document.getElementById("modal");
-    modal.style.display = "flex"; 
+    modal.style.display = "flex";
     setTimeout(() => {
-        modal.classList.add("show"); 
-    }, 10); 
+        modal.classList.add("show");
+    }, 10);
 }
 
 function closeModal() {
     const modal = document.getElementById("modal");
-    modal.classList.remove("show"); 
+    modal.classList.remove("show");
 
-    modal.addEventListener('transitionend', function() {
+    modal.addEventListener('transitionend', function () {
         if (!modal.classList.contains("show")) {
-            modal.style.display = "none"; 
+            modal.style.display = "none";
         }
     }, { once: true });
 }
 
+// -----------------------------
+// Carousel Functionality
+// -----------------------------
+document.querySelectorAll('.carousel-container').forEach((carousel) => {
+    const slides = carousel.querySelectorAll('.carousel-image');
+    const indicators = carousel.querySelectorAll('.indicator');
+    const carouselWrapper = carousel.querySelector('.carousel-images-wrapper');
 
+    let currentImageIndex = 0;
+    const totalImages = slides.length;
 
-let currentImageIndex = 0;
-let slides = document.querySelectorAll(".carousel-image");
-let totalImages = slides.length;
-let carouselWrapper = document.querySelector('.carousel-images-wrapper');
-
-// Function to change the image based on direction
-function changeImage(direction) {
-    // Update the currentImageIndex to go left or right
-    currentImageIndex = (currentImageIndex + direction + totalImages) % totalImages;
-
-    // Move the carousel wrapper to the correct position
-    carouselWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
-
-    // Update the indicator active class
-    const indicators = document.querySelectorAll('.indicator');
-    indicators.forEach((indicator, index) => {
-        indicator.classList.remove('active');
-        if (index === currentImageIndex) {
-            indicator.classList.add('active');
-        }
+    carousel.querySelector('.carousel-btn.left').addEventListener('click', (event) => {
+        event.stopPropagation();
+        changeImage(1);
     });
-}
 
-// Event listener for the left and right buttons
-document.querySelector('.carousel-btn.left').addEventListener('click', () => changeImage(-1));  // Move backward on left
-document.querySelector('.carousel-btn.right').addEventListener('click', () => changeImage(1)); // Move forward on right
+    carousel.querySelector('.carousel-btn.right').addEventListener('click', (event) => {
+        event.stopPropagation();
+        changeImage(-1);
+    });
 
-// Initialize: Ensure the first image is active on load
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the first image's active state
-    const firstImage = document.querySelector('.carousel-image');
-    const indicators = document.querySelectorAll('.indicator');
-    if (firstImage) {
-        firstImage.classList.add('active');
-        indicators[0].classList.add('active'); // Ensure the first indicator is active
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', (event) => {
+            event.stopPropagation();
+            changeImageToIndex(index);
+        });
+    });
+
+    slides[0].classList.add('active');
+    indicators[0].classList.add('active');
+
+    function changeImage(direction) {
+        currentImageIndex = (currentImageIndex + direction + totalImages) % totalImages;
+        updateCarousel();
+    }
+
+    function changeImageToIndex(index) {
+        currentImageIndex = index;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        carouselWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentImageIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentImageIndex);
+        });
     }
 });
 
-
-
+// -----------------------------
+// Date Interactions
+// -----------------------------
 const dates = document.querySelectorAll('.date');
 
 dates.forEach(date => {
     date.addEventListener('click', () => {
-        // Toggle the active class on the clicked date
         date.classList.toggle('active');
     });
 
     let pressTimer;
     date.addEventListener('mousedown', () => {
         pressTimer = setTimeout(() => {
-            date.classList.add('hold');  // Add hold class when clicked and held
-        }, 1);  // Hold duration (500ms)
+            date.classList.add('hold');
+        }, 500); // Adjusted hold duration
     });
 
     date.addEventListener('mouseup', () => {
-        clearTimeout(pressTimer);  // Clear hold timer on mouse release
-        date.classList.remove('hold');  // Remove hold class
+        clearTimeout(pressTimer);
+        date.classList.remove('hold');
     });
 
     date.addEventListener('mouseleave', () => {
-        clearTimeout(pressTimer);  // Clear hold timer if mouse leaves button
-        date.classList.remove('hold');  // Remove hold class
+        clearTimeout(pressTimer);
+        date.classList.remove('hold');
     });
 });
 
-function showLoadingAndRedirect() {
+// -----------------------------
+// Property Card Redirection
+// -----------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const propertyCards = document.querySelectorAll('.property-card');
+
+    propertyCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            showLoadingAndRedirect(index);
+        });
+    });
+});
+
+function showLoadingAndRedirect(cardIndex) {
     document.getElementById('loading-spinner').style.display = 'flex';
-    
-    setTimeout(function() {
-        window.open('https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/', '_blank');
-        document.getElementById('loading-spinner').style.display = 'none'; 
-    }, 1500); 
+
+    const urls = [
+        'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/',
+        'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/',
+        'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/'
+    ];
+
+    if (cardIndex >= 0 && cardIndex < urls.length) {
+        setTimeout(() => {
+            window.open(urls[cardIndex], '_blank');
+            document.getElementById('loading-spinner').style.display = 'none';
+        }, 1500);
+    } else {
+        console.error('Invalid card index');
+    }
 }
