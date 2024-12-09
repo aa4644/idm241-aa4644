@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zillow Microinteraction Case Study</title>
+    <link rel="stylesheet" href="casestudy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="casestudy_image/hero-image-1.svg" alt="Hero image of the final project" class="hero-image">
+            <h1>Zillow Microinteraction Redesign</h1>
+            <p>Improving User Interactions through Microinteraction Enhancements</p>
+        </div>
+    </section>
+    
+    <section class="project-details">
+        <div class="details-container">
+            <div class="detail-column">
+                <h3>My Role:</h3>
+                <p>Web Developer, UI Designer</p>
+            </div>
+            <div class="detail-column">
+                <h3>Tools:</h3>
+                <p>VSCode, GitHub, Figma</p>
+            </div>
+            <div class="detail-column">
+                <h3>Methods:</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div class="detail-column">
+                <h3>Timeline:</h3>
+                <p>Sept 2024 - Dec 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="overview">
+        <div class="section-content">
+            <h2>Overview</h2>
+            <p>The Zillow Microinteraction Redesign was a project focused on improving the interactive elements of Zillow’s property cards. The existing design lacked key visual and responsive cues, resulting in a static and less intuitive user experience. By integrating dynamic microinteractions, the project aimed to make the platform more engaging and user-friendly. Key improvements included hover effects, smoother transitions, an interactive favorites button, and streamlined image navigation. The result was a polished redesign that enhances user feedback and satisfaction.</p>
+        </div>
+    </section>
+
+    <section class="context">
+        <div class="section-content">
+            <h2>Context & Challenge</h2>
+            <div class="context-details">
+                <h3>Background</h3>
+                <p>As one of the most popular real estate platforms, Zillow serves users searching for rental and purchase properties. However, during an evaluation of its property cards, I identified opportunities to improve interactivity and user feedback. The absence of meaningful hover states, abrupt changes, and limited user options created a subpar experience that I sought to address.</p>
+            </div>
+            <div class="problem">
+                <h3>The Problem</h3>
+                <p>Zillow’s property cards had limited interactivity and visual feedback. Hover states were minimal, the favorites button lacked transitions, and the navigation experience was static and abrupt. Users had to click into the card to access additional functionality, leading to unnecessary steps.</p>
+            </div>
+            <div class="goals">
+                <h3>Goals & Objectives</h3>
+                <p>The primary objective was to redesign the microinteractions, adding clear visual cues and feedback during interactions.</p>
+                <ul>
+                    <li>Add meaningful visual and interactive feedback to property cards</li>
+                    <li>Streamline the user experience by reducing the need to navigate off the main page</li>
+                    <li>Improve user satisfaction with polished and responsive microinteractions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="section-content">
+            <h2>Process & Insights</h2>
+            <p>To achieve the redesign goals, I focused on six key microinteractions:</p>
+            <ul>
+                <li>Hover Effects: Enlarging the property card and adding a shadow for better visibility.</li>
+                <pre>
+                    <code>
+                        function handleHover(event, isHovering) {
+                            const heartIcon = event.target;
+                        
+                            if (heartIcon.tagName === 'IMG') {
+                                const isLiked = heartIcon.classList.contains('favorited');
+                                const nextSrc = isLiked
+                                    ? (isHovering ? "images/active-hover.svg" : "images/active-filled.svg")
+                                    : (isHovering ? "images/hover.svg" : "images/default.svg");
+                        
+                                fadeAndSwapIcon(heartIcon, nextSrc);
+                            }
+                        }
+                    </code>
+                </pre>
+            </ul>
+            <ul>
+                <li>Loading Screen: Adding a smooth transition when users click on the property card, replacing abrupt page changes.</li>
+                <pre>
+                    <code>
+                        function openModal() {
+                            const modal = document.getElementById("modal");
+                            modal.style.display = "flex";
+                            setTimeout(() => {
+                                modal.classList.add("show");
+                            }, 10);
+                        }
+                        
+                        function closeModal() {
+                            const modal = document.getElementById("modal");
+                            modal.classList.remove("show");
+                            modal.addEventListener('transitionend', function () {
+                                if (!modal.classList.contains("show")) {
+                                    modal.style.display = "none";
+                                }
+                            }, { once: true });
+                        }
+                    </code>
+                </pre>
+            </ul>
+            <ul>
+                <li>Enhanced Favorites Button:</li>
+                <ul>
+                    <li>Hover State: Transitioning from a white outline to a red outline.</li>
+                    <li>Pressing Down: Button shrinks slightly for tactile feedback.</li>
+                    <li>Active State: A glowing effect appears around the heart icon when hovered.</li>
+                </ul>
+                <pre>
+                    <code>
+                        function toggleLike(event) {
+                            event.stopPropagation(); // Prevents the card click event from triggering
+                        
+                            const heartIcon = event.target; // Get the heart icon that was clicked
+                            const isLiked = heartIcon.classList.toggle('favorited'); // Toggle the 'favorited' class
+                        
+                            const newSrc = isLiked ? "images/active-filled.svg" : "images/default.svg";
+                            fadeAndSwapIcon(heartIcon, newSrc);
+                        }
+                        
+                        function fadeAndSwapIcon(iconElement, newSrc) {
+                            iconElement.style.opacity = 0.5; // Fade out
+                            setTimeout(() => {
+                                iconElement.src = newSrc;
+                                iconElement.style.opacity = 1; // Fade back in
+                            }, 400); // Match half the CSS transition time
+                        }                        
+                    </code>
+                </pre>
+            </ul>
+            <ul>
+                <li>Image Scroll Button: Enabling quick image navigation directly from the property card without needing to click into the details.</li>
+                <pre>
+                    <code>
+                        document.querySelectorAll('.carousel-container').forEach((carousel) => {
+                            const slides = carousel.querySelectorAll('.carousel-image');
+                            const indicators = carousel.querySelectorAll('.indicator');
+                            const carouselWrapper = carousel.querySelector('.carousel-images-wrapper');
+                        
+                            let currentImageIndex = 0;
+                            const totalImages = slides.length;
+                        
+                            carousel.querySelector('.carousel-btn.left').addEventListener('click', (event) => {
+                                event.stopPropagation();
+                                changeImage(1);
+                            });
+                        
+                            carousel.querySelector('.carousel-btn.right').addEventListener('click', (event) => {
+                                event.stopPropagation();
+                                changeImage(-1);
+                            });
+                        
+                            indicators.forEach((indicator, index) => {
+                                indicator.addEventListener('click', (event) => {
+                                    event.stopPropagation();
+                                    changeImageToIndex(index);
+                                });
+                            });
+                        
+                            slides[0].classList.add('active');
+                            indicators[0].classList.add('active');
+                        
+                            function changeImage(direction) {
+                                currentImageIndex = (currentImageIndex + direction + totalImages) % totalImages;
+                                updateCarousel();
+                            }
+                        
+                            function changeImageToIndex(index) {
+                                currentImageIndex = index;
+                                updateCarousel();
+                            }
+                        
+                            function updateCarousel() {
+                                carouselWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+                        
+                                slides.forEach((slide, index) => {
+                                    slide.classList.toggle('active', index === currentImageIndex);
+                                });
+                        
+                                indicators.forEach((indicator, index) => {
+                                    indicator.classList.toggle('active', index === currentImageIndex);
+                                });
+                            }
+                        });
+                    </code>
+                </pre>
+            </ul>
+            <ul>
+                <li>Request Tour Button: A "Request Tour" button fades in when hovering over the card, streamlining the process of scheduling a tour.</li>
+                <li>Form Interaction: Improving hover states and feedback within the tour request form for clearer interactions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="section-content">
+            <h2>The Solution</h2>
+            <p>The redesigned property card features a cohesive set of microinteractions that elevate the user experience:</p>
+            <div class="gallery">
+                <img src="solution-image1.jpg" alt="video of interaction" class="gallery-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="section-content">
+            <h2>The Results</h2>
+            <ul>
+                <li>Improved User Feedback: The enhanced visual and interactive elements provide clear cues, reducing confusion.</li>
+                <li>Streamlined Navigation: New features like the "Request Tour" button and image scroll eliminate unnecessary steps.</li>
+                <li>Increased Engagement: Interactive microinteractions make property exploration more enjoyable and intuitive.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="section-content">
+            <h2>Takeaways</h2>
+            <p>While the project was a success, there are areas for improvement:</p>
+            <ul>
+                <li>Refine code organization for better maintainability.</li>
+                <li>Experiment with advanced JavaScript techniques to optimize animations further.</li>
+                <li>Allocate additional time for testing and iteration to ensure a flawless user experience.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

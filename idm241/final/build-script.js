@@ -155,8 +155,8 @@ function showLoadingAndRedirect(cardIndex) {
 
     const urls = [
         'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/',
-        'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/',
-        'https://www.zillow.com/homes/2171-Leland-Ave-Mountain-View,-CA-94040_rb/19509172_zpid/'
+        'https://www.zillow.com/homedetails/8504-Dogwood-Dr-Coopersburg-PA-18036/9637850_zpid/',
+        'https://www.zillow.com/homedetails/10105-Shinnecock-Hills-Dr-Austin-TX-78747/29515028_zpid/?'
     ];
 
     if (cardIndex >= 0 && cardIndex < urls.length) {
