@@ -116,6 +116,9 @@ pre code.hljs {
     border-radius: 10px;
 }
 
+video {
+    width: 1000px;
+}
 
 /* Gallery */
 .gallery {
