@@ -11,40 +11,46 @@ h1 {
     font-size: 2.5rem;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
 
 p {
     font-size: 1.2rem;
 }
 
 body {
-    padding: 0 20px 20px 20px; /* Reduced padding for consistency */
+    padding: 0 40px 40px 40px; 
     box-sizing: border-box;
 }
 
 /* Hero Section */
 .hero {
-    padding: 10px 20px; /* Adjust padding for better consistency */
-    text-align: left; /* Ensures everything is aligned */
+    padding: 10px 20px; 
+    text-align: left; 
 }
 
 .hero-content {
-    max-width: 1000px; /* Made it consistent with the max-width of other sections */
+    max-width: 1000px; 
     margin: auto;
 }
 
 .hero-image {
     width: 100%;
-    height: auto; /* Change from 75% height to auto for a more natural look */
+    height: auto; 
     max-width: 1000px;
     margin-top: 20px;
     border-radius: 8px;
 }
 
 /* Project Details Section */
-/* Project Details Section */
 .project-details {
     text-align: left;
-    padding: 2rem 4rem; /* Increased padding on the sides for more space */
+    padding: 2rem 4rem; 
 }
 
 .details-container {
@@ -52,15 +58,15 @@ body {
     grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
     gap: 1rem;
     justify-items: center;
-    max-width: 1000px; /* Increased max-width to prevent content from being too narrow */
-    margin: 0 auto; /* Centers the container */
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
 .detail-column {
     background: #ffffff;
-    padding: 1.5rem; /* Increased padding inside each column */
-    width: 100%; /* Ensures columns are full-width */
-    max-width: 280px; /* Limits the width for better control */
+    padding: 1.5rem;
+    width: 100%; 
+    max-width: 280px; 
 }
 
 .detail-column h3 {
@@ -74,31 +80,13 @@ body {
     color: #666;
 }
 
-/* Responsive Design for Project Details */
-@media (max-width: 1024px) {
-    .details-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    .details-container {
-        /*grid-template-columns: 1fr; /* 1 column for mobile */
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .project-details {
-        padding: 0 25px 0 25px;
-    }
-}
-
-
 /* Section Styling */
 .section-content {
     padding: 30px;
     margin-bottom: 40px;
     border-radius: 12px;
-    max-width: 1000px; /* Consistent max-width with other sections */
-    margin: 0 auto; /* Centers the section */
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
 h2 {
@@ -107,7 +95,7 @@ h2 {
 }
 
 h3 {
-    color: #916903; /* Darker blue for subheaders 0050a0 */
+    color: #916903;
     margin-top: 20px;
 }
 
@@ -117,7 +105,13 @@ pre code.hljs {
 }
 
 video {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 8px;
+    border: 2px solid #076dd3; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box; 
 }
 
 /* Gallery */
@@ -131,15 +125,69 @@ video {
 
 .gallery-image {
     width: 100%;
-    max-width: 500px;
+    height: auto; 
+    max-width: 1000px;
+    margin-top: 20px;
     border-radius: 8px;
+    border-color: #076dd3;
+    border-style: solid;
 }
+
+/* Solution Button */
+.solution-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007BFF; 
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.solution-button:hover {
+    background-color: #0056b3; 
+    transition: background-color 0.8s;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding: 0 10px; 
+    }
+
+    .project-details {
+        padding: 1rem; 
+    }
+
+    .details-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0.5rem; 
+    }
+
+    .detail-column {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 5px 10px; 
+    }
+
+    .section-content {
+        padding: 15px; 
+    }
+
+    .gallery {
+        gap: 10px; 
+    }
+
     .hero-image, .gallery-image {
         width: 100%;
     }
+
     h1 {
         font-size: 24px;
     }
@@ -155,8 +203,35 @@ video {
     p {
         font-size: 16px;
     }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; 
+    }
+
+    .project-details {
+        padding: 0.5rem; 
+    }
+
+    .details-container {
+        grid-template-columns: 1fr; /* Switches to a single-column layout */
+        gap: 0.25rem; 
+    }
+
+    .detail-column {
+        padding: 0.5rem; 
+    }
+
+    .hero {
+        padding: 5px; 
+    }
+
+    .section-content {
+        padding: 10px; 
+    }
+
     .gallery {
-        flex-direction: column;
-        align-items: center;
+        gap: 5px; 
     }
 }

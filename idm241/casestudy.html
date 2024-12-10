@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="casestudy.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
 </head>
 <body>
@@ -26,15 +28,25 @@
             </div>
             <div class="detail-column">
                 <h3>Tools:</h3>
-                <p>VSCode, GitHub, Figma</p>
+                <p>
+                    <img src="casestudy_image/vscode-icon.svg" alt="VSCode icon"> VSCode, 
+                    <i class="fab fa-github"></i> GitHub, 
+                    <i class="fab fa-figma"></i> Figma
+                </p>
             </div>
             <div class="detail-column">
                 <h3>Methods:</h3>
-                <p>HTML, CSS, JavaScript</p>
+                <p>
+                    <i class="fab fa-html5" style="color: #e34f26;"></i> HTML, 
+                    <i class="fab fa-css3-alt" style="color: #1572b6;"></i> CSS, 
+                    <i class="fab fa-js-square" style="color: #f7df1e;"></i> JavaScript
+                </p>
             </div>
             <div class="detail-column">
                 <h3>Timeline:</h3>
-                <p>Sept 2024 - Dec 2024</p>
+                <p>
+                    <i class="fa-regular fa-calendar" style="margin-right: 5px;"></i>Sept 2024 - Dec 2024
+                </p>
             </div>
         </div>
     </section>
@@ -42,7 +54,7 @@
     <section class="overview">
         <div class="section-content">
             <h2>Overview</h2>
-            <p>The Zillow Microinteraction Redesign was a project focused on improving the interactive elements of Zillow’s property cards. The existing design lacked key visual and responsive cues, resulting in a static and less intuitive user experience. By integrating dynamic microinteractions, the project aimed to make the platform more engaging and user-friendly. Key improvements included hover effects, smoother transitions, an interactive favorites button, and streamlined image navigation. The result was a polished redesign that enhances user feedback and satisfaction.</p>
+            <p>The Zillow Microinteraction Redesign aimed to <strong>enhance the interactive elements of Zillow’s property cards.</strong> The existing design provided minimal feedback and lacked engaging interactions, resulting in a static and less intuitive user experience. Through this redesign, I introduced dynamic microinteractions, including hover effects, a revamped favorites button, image navigation, and improved request tour functionality. These updates not only <strong>improved user satisfaction but also streamlined the overall experience.</strong></p>
         </div>
     </section>
 
@@ -51,15 +63,15 @@
             <h2>Context & Challenge</h2>
             <div class="context-details">
                 <h3>Background</h3>
-                <p>As one of the most popular real estate platforms, Zillow serves users searching for rental and purchase properties. However, during an evaluation of its property cards, I identified opportunities to improve interactivity and user feedback. The absence of meaningful hover states, abrupt changes, and limited user options created a subpar experience that I sought to address.</p>
+                <p>As one of the most popular real estate platforms, Zillow serves users searching for rental and purchase properties. However, during an evaluation of its property cards, I identified opportunities to improve interactivity and user feedback. The absence of meaningful hover states, abrupt changes, and limited user options reduced user satisfaction.</p>
             </div>
             <div class="problem">
                 <h3>The Problem</h3>
-                <p>Zillow’s property cards had limited interactivity and visual feedback. Hover states were minimal, the favorites button lacked transitions, and the navigation experience was static and abrupt. Users had to click into the card to access additional functionality, leading to unnecessary steps.</p>
+                <p>Zillow’s property cards had <strong>limited interactivity and visual feedback.</strong> Hover states were minimal, the favorites button lacked transitions, and the navigation experience was static and abrupt. Users had to click into the card to access additional functionality, leading to unnecessary steps.</p>
             </div>
             <div class="goals">
                 <h3>Goals & Objectives</h3>
-                <p>The primary objective was to redesign the microinteractions, adding clear visual cues and feedback during interactions.</p>
+                <p>The primary objective was to redesign the microinteractions, adding clear visual cues and feedback during interactions:</p>
                 <ul>
                     <li>Add meaningful visual and interactive feedback to property cards</li>
                     <li>Streamline the user experience by reducing the need to navigate off the main page</li>
@@ -71,10 +83,46 @@
 
     <section class="process">
         <div class="section-content">
-            <h2>Process & Insights</h2>
-            <p>To achieve the redesign goals, I focused on six key microinteractions:</p>
+            <h2>Process &amp; Insights: Beta to Final Build</h2>
+            <h3>Development</h3>
+            <p>The journey from concept to completion was an iterative process, refining ideas and implementing feedback at each stage. This structured approach allowed me to systematically improve both the design and functionality of Zillow’s property cards.</p>
+            <h3>Beta Description: Conceptualizing Microinteractions</h3>
+            <p>The process began with creating a beta description where I outlined <strong>four key microinteractions</strong> to include in the redesign. For each microinteraction, I defined:</p>
             <ul>
-                <li>Hover Effects: Enlarging the property card and adding a shadow for better visibility.</li>
+                <li><strong>Triggers:</strong> What actions would initiate the interaction.</li>
+                <li><strong>Rules:</strong> The conditions and logic governing the behavior.</li>
+                <li><strong>Feedback:</strong> How users would see or feel the results of their actions.</li>
+                <li><strong>Loops &amp; Modes:</strong> How the interaction would repeat or adapt over time.</li>
+            </ul>
+            <p>This initial step helped solidify the framework for the redesign, ensuring each microinteraction was purposeful and user-focused. Once completed, I presented the description to my instructor, whose feedback highlighted areas to clarify and improve.</p>
+            <img src="casestudy_image/beta-description.png" alt="Beta description image" class="gallery-image">
+            <h3>Beta Build: Executing the Vision</h3>
+            <p>Using the beta description as a foundation, I moved on to the beta build, where I began <strong>developing the microinteractions.</strong> A key challenge was replicating Zillow's property card design to maintain consistency with the original platform. This required careful attention to layout, spacing, and styling to ensure the new interactions felt cohesive with Zillow’s branding.</p>
+            <br>
+            <p>During this phase, I focused on implementing the initial four microinteractions, including hover effects and an enhanced favorites button. Feedback from my instructor at this stage emphasized further refinement, prompting me to make adjustments and prepare for the final iteration.</p>
+            <h3>Final Description: Expanding the Scope</h3>
+            <p>After addressing feedback on the beta build, I revisited the description to expand and refine it. In this final description, I <strong>outlined all six microinteractions</strong> I wanted to integrate, ensuring they aligned with both user needs and design goals. Additional wordings were revised for clarity, and I incorporated critiques to make the plan more comprehensive and actionable.</p>
+            <img src="casestudy_image/final-description.png" alt="Final description image" class="gallery-image">
+            <h3>Final Build: Bringing the Vision to Life</h3>
+            <p>The final build marked the culmination of the iterative process, combining the improved microinteractions into a cohesive property card design. All six interactions were implemented, including hover effects, loading screens, and the "Request Tour" button. Each interaction was polished to ensure seamless transitions, consistent feedback, and a user-friendly experience.</p>
+            <br>
+            <p>This iterative approach—starting with the beta description, evolving through the beta build, and refining into the final build—allowed me to deliver a thoughtful and well-executed redesign. It <strong>reinforced the importance of planning, feedback, and continuous improvement</strong> in creating an effective user experience.</p>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="section-content">
+            <h2>The Solution</h2>
+            <p>The redesigned property card features a cohesive set of microinteractions that elevate the user experience.</p>
+            <div class="video-placeholder">
+                <video controls autoplay loop muted>
+                    <source src="casestudy_image/microinteraction.mp4" type="video/mp4"> 
+                </video>
+            </div>
+            <p><strong>Key Developments:</strong></p>
+            <ul>
+                <li><strong>Hover Effects:</strong> Enlarging the property card and adding a shadow for better visibility. This ensured users received clear feedback when interacting with a card.</li>
+            </ul>
                 <pre>
                     <code>
                         function handleHover(event, isHovering) {
@@ -91,9 +139,9 @@
                         }
                     </code>
                 </pre>
-            </ul>
             <ul>
-                <li>Loading Screen: Adding a smooth transition when users click on the property card, replacing abrupt page changes.</li>
+                <li><strong>Loading Screen:</strong> Adding a smooth transition when users click on the property card, replacing abrupt page changes.</li>
+            </ul>
                 <pre>
                     <code>
                         function openModal() {
@@ -115,14 +163,15 @@
                         }
                     </code>
                 </pre>
-            </ul>
             <ul>
-                <li>Enhanced Favorites Button:</li>
-                <ul>
-                    <li>Hover State: Transitioning from a white outline to a red outline.</li>
-                    <li>Pressing Down: Button shrinks slightly for tactile feedback.</li>
-                    <li>Active State: A glowing effect appears around the heart icon when hovered.</li>
-                </ul>
+                <li><strong>Enhanced Favorites Button:</strong>
+                    <ul>
+                        <li>Hover State: Transitioning from a white outline to a red outline.</li>
+                        <li>Pressing Down: Button shrinks for visible user feedback.</li>
+                        <li>Active State: A glowing effect appears around the heart icon when hovered.</li>
+                    </ul>
+                </li>
+            </ul>
                 <pre>
                     <code>
                         function toggleLike(event) {
@@ -144,9 +193,9 @@
                         }                        
                     </code>
                 </pre>
-            </ul>
             <ul>
-                <li>Image Scroll Button: Enabling quick image navigation directly from the property card without needing to click into the details.</li>
+                <li><strong>Image Scroll Button:</strong> Enabling quick image navigation directly from the property card without needing to click into the details.</li>
+            </ul>
                 <pre>
                     <code>
                         document.querySelectorAll('.carousel-container').forEach((carousel) => {
@@ -201,45 +250,43 @@
                         });
                     </code>
                 </pre>
-            </ul>
             <ul>
-                <li>Request Tour Button: A "Request Tour" button fades in when hovering over the card, streamlining the process of scheduling a tour.</li>
-                <li>Form Interaction: Improving hover states and feedback within the tour request form for clearer interactions.</li>
+                <li><strong>Request Tour Button:</strong> A "Request Tour" button fades in when hovering over the card, streamlining the process of scheduling a tour.</li>
+                <li><strong>Form Interaction:</strong> Improving hover states and feedback within the tour request form for clearer interactions.</li>
             </ul>
-        </div>
-    </section>
-
-    <section class="solution">
-        <div class="section-content">
-            <h2>The Solution</h2>
-            <p>The redesigned property card features a cohesive set of microinteractions that elevate the user experience:</p>
-            <div class="video-placeholder">
-                <video controls autoplay loop muted>
-                    <source src="casestudy_image/microinteraction.mp4" type="video/mp4"> 
-                </video>
-            </div>
         </div>
     </section>
 
     <section class="results">
         <div class="section-content">
             <h2>The Results</h2>
+            <p>The redesigned property cards introduced visually engaging and functional microinteractions, making the user experience more <strong>intuitive and enjoyable.</strong> Features like hover effects, an enhanced favorites button, and in-card image scrolling significantly reduced friction in the property search process. Users could now perform common tasks, such as browsing images or scheduling tours, directly from the card without needing additional navigation steps.</p>
             <ul>
-                <li>Improved User Feedback: The enhanced visual and interactive elements provide clear cues, reducing confusion.</li>
-                <li>Streamlined Navigation: New features like the "Request Tour" button and image scroll eliminate unnecessary steps.</li>
-                <li>Increased Engagement: Interactive microinteractions make property exploration more enjoyable and intuitive.</li>
+                <li><strong>Key Outcomes:</strong>
+                    <ul>
+                        <li><strong>Improved User Feedback:</strong> Clear visual cues and smooth transitions reduced user confusion.</li>
+                        <li><strong>Streamlined Navigation:</strong> New features, such as the "Request Tour" button and image scrolling, minimized unnecessary clicks.</li>
+                        <li><strong>Increased Engagement:</strong> The polished microinteractions created a more enjoyable and interactive property browsing experience.</li>
+                    </ul>
+                </li>
             </ul>
+            <a href="final/build.html" class="solution-button">View Final Build</a>
         </div>
     </section>
 
     <section class="results">
         <div class="section-content">
             <h2>Takeaways</h2>
-            <p>While the project was a success, there are areas for improvement:</p>
+            <p>This project was a valuable opportunity to enhance microinteraction design, addressing user pain points to create a more responsive experience. Iterative feedback refined the design, while challenges with advanced JavaScript were overcome through collaboration and persistence. Moving forward, I aim to improve code organization, explore advanced animations, and prioritize usability testing to further optimize the design.</p>
             <ul>
-                <li>Refine code organization for better maintainability.</li>
-                <li>Experiment with advanced JavaScript techniques to optimize animations further.</li>
-                <li>Allocate additional time for testing and iteration to ensure a flawless user experience.</li>
+                <li>
+                    <strong>Main Takeaways:</strong>
+                    <ul>
+                        <li>Refine code organization for better maintainability</li>
+                        <li>Experiment with advanced JavaScript techniques to optimize animations further</li>
+                        <li>Allocate additional time for testing and iteration to ensure a flawless user experience</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </section>
