@@ -53,7 +53,6 @@ function openModal(button) {
     modalAddress.textContent = address;
     modalInfo.textContent = info;
 
-
     modal.style.display = "flex";
     setTimeout(() => {
         modal.classList.add("show");
