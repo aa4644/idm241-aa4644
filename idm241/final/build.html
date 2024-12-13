@@ -52,7 +52,12 @@
             <div class="property-details">
                 <div class="price-row">
                     <h2>$1,500,000</h2>
-                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                    <button class="request-tour-btn"
+                            onclick="event.stopPropagation(); openModal(this)"
+                            data-price="$1,500,000"
+                            data-info="4 bds | 2 ba | 1,296 sqft | Active"
+                            data-address="2171 Leland Ave, Mountain View, CA, 94040"
+                            data-image="images/property-image1.png">Request Tour</button>
                 </div>
                 <p class="property-info"><strong>4 bds</strong> | <strong>2 ba</strong> | <strong>1,296 sqft</strong> | Active</p>
                 <p class="address">2171 Leland Ave, Mountain View, CA, 94040</p>
@@ -85,13 +90,19 @@
             <div class="property-details">
                 <div class="price-row">
                     <h2>$579,900</h2>
-                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                    <button class="request-tour-btn"
+                    onclick="event.stopPropagation(); openModal(this)"
+                    data-price="$579,900"
+                    data-info="5 bds | 4 ba | 3,130 sqft | Active"
+                    data-address="8504 Dogwood Dr, Coopersburg, PA 18036"
+                    data-image="images/property2-image-1.png">Request Tour</button>
                 </div>
                 <p class="property-info"><strong>5 bds</strong> | <strong>4 ba</strong> | <strong>3,130 sqft</strong> | Active</p>
                 <p class="address">8504 Dogwood Dr, Coopersburg, PA 18036</p>
-                <p class="mls-id">MLS ID #748946, GLVR</p>
+                <p class="mls-id">MLS ID #8860705, Unlock MLS</p>
             </div>
         </div>
+
         <!-- property card 3-->
         <div class="property-card" onclick="showLoadingAndRedirect();">
             <div class="image-container">
@@ -118,7 +129,12 @@
             <div class="property-details">
                 <div class="price-row">
                     <h2>$949,900</h2>
-                    <button class="request-tour-btn" onclick="event.stopPropagation(); openModal()">Request Tour</button>
+                    <button class="request-tour-btn"
+                    onclick="event.stopPropagation(); openModal(this)"
+                    data-price="$949,900"
+                    data-info="5 bds | 4 ba | 4,889 sqft | Active"
+                    data-address="10105 Shinnecock Hills Dr, Austin, TX 7874"
+                    data-image="images/property3-image-1.png">Request Tour</button>
                 </div>
                 <p class="property-info"><strong>5 bds</strong> | <strong>4 ba</strong> | <strong>4,889 sqft</strong> | Active</p>
                 <p class="address">10105 Shinnecock Hills Dr, Austin, TX 7874</p>
@@ -133,10 +149,10 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Request a Tour</h2>
             <div class="property-info">
-                <img src="images/property-image1.png" alt="Property Image" class="property-image">
+                <img id="modal-property-image" src="" alt="Property Image" class="property-image">
                 <div class="property-details">
-                    <p>1918 E Lippincott St<br>Philadelphia, PA 19134</p>
-                    <p><strong>3 bd | 2 ba | 1,184 sqft</strong></p>
+                    <p id="modal-property-address"></p>
+                    <p id="modal-property-info"></p>
                 </div>
             </div>
             <div class="tip">

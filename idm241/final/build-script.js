@@ -25,19 +25,35 @@ function handleHover(event, isHovering) {
 }
 
 function fadeAndSwapIcon(iconElement, newSrc) {
-    iconElement.style.opacity = 0.5; // Fade out
+    iconElement.style.opacity = 0.5; 
 
     setTimeout(() => {
         iconElement.src = newSrc;
-        iconElement.style.opacity = 1; // Fade back in
-    }, 400); // Match half the CSS transition time
+        iconElement.style.opacity = 1; 
+    }, 400); 
 }
 
 // -----------------------------
 // Modal Management
 // -----------------------------
-function openModal() {
+function openModal(button) {
     const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-property-image");
+    const modalAddress = document.getElementById("modal-property-address");
+    const modalInfo = document.getElementById("modal-property-info");
+
+
+    const price = button.getAttribute('data-price');
+    const info = button.getAttribute('data-info');
+    const address = button.getAttribute('data-address');
+    const image = button.getAttribute('data-image');
+
+
+    modalImage.src = image;
+    modalAddress.textContent = address;
+    modalInfo.textContent = info;
+
+
     modal.style.display = "flex";
     setTimeout(() => {
         modal.classList.add("show");
@@ -54,6 +70,7 @@ function closeModal() {
         }
     }, { once: true });
 }
+
 
 // -----------------------------
 // Carousel Functionality
@@ -123,7 +140,7 @@ dates.forEach(date => {
     date.addEventListener('mousedown', () => {
         pressTimer = setTimeout(() => {
             date.classList.add('hold');
-        }, 500); // Adjusted hold duration
+        }, 500); 
     });
 
     date.addEventListener('mouseup', () => {
@@ -138,7 +155,7 @@ dates.forEach(date => {
 });
 
 // -----------------------------
-// Property Card Redirection
+// Property Card Interactions
 // -----------------------------
 document.addEventListener('DOMContentLoaded', () => {
     const propertyCards = document.querySelectorAll('.property-card');
@@ -168,3 +185,4 @@ function showLoadingAndRedirect(cardIndex) {
         console.error('Invalid card index');
     }
 }
+
